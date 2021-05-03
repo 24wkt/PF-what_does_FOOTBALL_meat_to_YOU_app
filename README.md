@@ -22,4 +22,7 @@ Qiitaやteratailといったようなサイトの制作をしたいと考えて�
 試合を見ていて感じたことをミニブログのような投稿にアウトプットすることで考えを追求するために記事を投稿できたり、
 その反対に疑問に感じたり違和感を覚えたこと追求するために投稿されたブログを読んでみたりして新しい解釈や意見、トレンドを知ることができる。
 ## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1avH61O1nfedfeSSdHGCYQXinqJ-ijk1u1COCk0Cg1x8/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1avH61O1nfedfeSSdHGCYQXinqJ-ijk1u1COCk0Cg1x8/edit?usp=sharing  
+  
+カレンダーとリッチエディタに関しては制作の進捗によって実装を検討します。  
+まずはベーシックな投稿機能が正常に機能するようにし、カレンダー機能のプライオリティは一番低いものとします。
