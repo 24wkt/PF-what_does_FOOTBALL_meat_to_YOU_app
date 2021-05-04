@@ -26,3 +26,5 @@ https://docs.google.com/spreadsheets/d/1avH61O1nfedfeSSdHGCYQXinqJ-ijk1u1COCk0Cg
   
 カレンダーとリッチエディタに関しては制作の進捗によって実装を検討します。  
 まずはベーシックな投稿機能が正常に機能するようにし、カレンダー機能のプライオリティは一番低いものとします。
+## 画面遷移図
+![【会員側】画面遷移図](https://user-images.githubusercontent.com/78304714/116954718-b0d4b280-accb-11eb-8ad9-7297754e0667.png)
