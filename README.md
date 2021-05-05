@@ -29,4 +29,5 @@ https://docs.google.com/spreadsheets/d/1avH61O1nfedfeSSdHGCYQXinqJ-ijk1u1COCk0Cg
 ## 画面遷移図
 ![【会員側】画面遷移図](https://user-images.githubusercontent.com/78304714/116954718-b0d4b280-accb-11eb-8ad9-7297754e0667.png)
 ![【管理者側】画面遷移図](https://user-images.githubusercontent.com/78304714/116954824-f6917b00-accb-11eb-88d6-10f7b7880cfc.png)
-
+## ER図
+![ER図](https://user-images.githubusercontent.com/78304714/117120099-e19d1080-adcd-11eb-88a9-a3dbb36f1c22.png)
