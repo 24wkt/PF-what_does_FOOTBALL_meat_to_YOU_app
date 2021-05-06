@@ -43,3 +43,5 @@ https://docs.google.com/spreadsheets/d/1avH61O1nfedfeSSdHGCYQXinqJ-ijk1u1COCk0Cg
 
 ### トップページ（共用部分）
 [【共用】トップページ.pdf](https://github.com/24wkt/PF-what_does_FOOTBALL_meat_to_YOU_app/files/6432830/default.pdf)
+## テーブル定義書
+https://docs.google.com/spreadsheets/d/16y0zih7rrzLRGUCOXE42qfI0ouxys3sFGFldwLmacCE/edit#gid=1427492483
