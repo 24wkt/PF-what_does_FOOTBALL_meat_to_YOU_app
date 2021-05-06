@@ -31,3 +31,10 @@ https://docs.google.com/spreadsheets/d/1avH61O1nfedfeSSdHGCYQXinqJ-ijk1u1COCk0Cg
 ![【管理者側】画面遷移図](https://user-images.githubusercontent.com/78304714/116954824-f6917b00-accb-11eb-88d6-10f7b7880cfc.png)
 ## ER図
 ![ER図](https://user-images.githubusercontent.com/78304714/117120099-e19d1080-adcd-11eb-88a9-a3dbb36f1c22.png)
+## ワイヤーフレーム
+### 会員側
+[【会員側】ワイヤーフレーム.pdf](https://github.com/24wkt/PF-what_does_FOOTBALL_meat_to_YOU_app/files/6432819/default.pdf)
+### 管理者側
+[【管理者側】ワイヤーフレーム.pdf](https://github.com/24wkt/PF-what_does_FOOTBALL_meat_to_YOU_app/files/6432826/default.pdf)
+### トップページ（共用部分）
+[【共用】トップページ.pdf](https://github.com/24wkt/PF-what_does_FOOTBALL_meat_to_YOU_app/files/6432830/default.pdf)
