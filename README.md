@@ -34,14 +34,16 @@ https://docs.google.com/spreadsheets/d/1avH61O1nfedfeSSdHGCYQXinqJ-ijk1u1COCk0Cg
 お問い合わせと試合詳細機能に関しては現状、表記しておりません。
 ## ワイヤーフレーム
 ### 会員側
-[【会員側】ワイヤーフレーム.pdf](https://github.com/24wkt/PF-what_does_FOOTBALL_meat_to_YOU_app/files/6432819/default.pdf)
+[【会員側】ワイヤーフレーム.pdf](https://github.com/24wkt/PF-what_does_FOOTBALL_meat_to_YOU_app/files/6432819/default.pdf)  
 お問い合わせと試合詳細機能に関しては現状、表記しておりません。
 
 ### 管理者側
-[【管理者側】ワイヤーフレーム.pdf](https://github.com/24wkt/PF-what_does_FOOTBALL_meat_to_YOU_app/files/6432826/default.pdf)
+[【管理者側】ワイヤーフレーム.pdf](https://github.com/24wkt/PF-what_does_FOOTBALL_meat_to_YOU_app/files/6432826/default.pdf)  
 お問い合わせと試合詳細機能に関しては現状、表記しておりません。
 
 ### トップページ（共用部分）
 [【共用】トップページ.pdf](https://github.com/24wkt/PF-what_does_FOOTBALL_meat_to_YOU_app/files/6432830/default.pdf)
 ## テーブル定義書
 https://docs.google.com/spreadsheets/d/16y0zih7rrzLRGUCOXE42qfI0ouxys3sFGFldwLmacCE/edit#gid=1427492483
+## アプリケーション詳細設計
+https://docs.google.com/spreadsheets/d/1AxyjrqX5UnIFfcXl3N0ECVqosZaJCPe0uGiPA7cpRTM/edit#gid=0
