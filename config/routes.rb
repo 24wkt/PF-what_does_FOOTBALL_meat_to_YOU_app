@@ -25,7 +25,7 @@ scope module: :public do
   # ログイン後のトップページ
   get 'end_users/home' => 'homes#top'
   get 'end_users/about' => 'homes/about'
-  
+
   # エンドユーザーに関するルーティング
   resources :end_users, only: [:index, :show, :edit, :update] do
     collection do
@@ -36,7 +36,7 @@ scope module: :public do
       post 'withdraw' => 'end_users#withdraw'
     end
   end
-  
+
   # 投稿に関するルーティング
   resources :blogs do
     # いいね機能
@@ -44,6 +44,5 @@ scope module: :public do
     # コメント機能
     resources :comments, only: [:create, :destroy]
   end
-
 end
 end
