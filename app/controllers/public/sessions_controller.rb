@@ -24,4 +24,10 @@ class Public::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
+
+  # サインアップ後のログイン先（仮置き＝＞最後はマイページに飛ばす）
+  def after_sign_up_path_for(resource)
+    end_users_home_path
+  end
+
 end

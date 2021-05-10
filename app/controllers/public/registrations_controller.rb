@@ -59,4 +59,9 @@ class Public::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  # サインアップ後のログイン先（仮置き＝＞最後はユーザー編集画面に飛ばす）
+  def after_sign_up_path_for(resource)
+    end_users_home_path
+  end
 end

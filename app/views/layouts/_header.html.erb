@@ -1,0 +1,32 @@
+<header>
+  <nav class="navbar navbar-expand-xl navbar-light bg-white">
+    <div class="col-xl-4">
+      <div class="logo">
+        <a href="/">What does FOOTBALL meatings to YOU?</a>
+      </div>
+    </div>
+    <div class="col-xl-8">
+      <button class="navbar-toggler mx-3 my-1" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+        <!--管理者としてログインした場合のヘッダー-->
+        <% if admin_signed_in? %>
+          <li><%= link_to "HOME", admin_top_path, class: "btn btn-outline-secondary mx-3 my-1" %></li>
+          <li><%= link_to "USERS", admin_end_users_path, class: "btn btn-outline-secondary mx-3 my-1" %></li>
+          <li><%= link_to "BLOGS", admin_blogs_path, class: "btn btn-outline-secondary mx-3 my-1" %></li>
+          <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, class: "btn btn-outline-secondary mx-3 my-1" %></li>
+        <!--会員としてログインした場合のヘッダー-->
+        <% else end_user_signed_in? %>
+          <li><%= link_to "HOME", end_users_home_path, class: "btn btn-outline-secondary mx-3 my-1" %></li>
+          <li><%= link_to "ABOUT", end_users_about_path, class: "btn btn-outline-secondary mx-3 my-1" %></li>
+          <li><%= link_to "BLOG", blogs_path, class: "btn btn-outline-secondary mx-3 my-1" %></li>
+          <li><%= link_to "MYPEGE", end_users_path(current_end_user), class: "btn btn-outline-secondary mx-3 my-1" %></li>
+          <li><%= link_to "LOGOUT", destroy_end_user_session_path, method: :delete, class: "btn btn-outline-secondary mx-3 my-1" %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
