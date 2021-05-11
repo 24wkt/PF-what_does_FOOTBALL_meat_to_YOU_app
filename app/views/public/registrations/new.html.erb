@@ -1,7 +1,7 @@
 <h2>User Signup</h2>
 
-<%= form_with model: @end_user, url:end_user_registration_path, local:true do |f| %>
-  <%= render "public/shared/error_messages", resource: resource %>
+<%= form_with model: @end_user, url:end_user_registration_path, local: true do |f| %>
+  <%= render "public/shared/error_messages", resource: @end_user %>
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name" %>

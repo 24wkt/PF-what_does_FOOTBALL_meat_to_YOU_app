@@ -26,7 +26,7 @@ class Public::SessionsController < Devise::SessionsController
   # end
 
   # サインアップ後のログイン先（仮置き＝＞最後はマイページに飛ばす）
-  def after_sign_up_path_for(resource)
+  def after_sign_in_path_for(resource)
     end_users_home_path
   end
 

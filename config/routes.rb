@@ -24,7 +24,7 @@ scope module: :public do
   get '/about' => 'fronts#about'
   # ログイン後のトップページ
   get 'end_users/home' => 'homes#top'
-  get 'end_users/about' => 'homes/about'
+  get 'end_users/about' => 'homes#about'
 
   # エンドユーザーに関するルーティング
   resources :end_users, only: [:index, :show, :edit, :update] do

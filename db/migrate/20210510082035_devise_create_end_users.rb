@@ -8,6 +8,7 @@ class DeviseCreateEndUsers < ActiveRecord::Migration[5.2]
       t.string :encrypted_password, null: false, default: ""
       t.string :name
       t.text :introduction
+      t.string :profile_image_id
       t.boolean :is_deleted, default: false, null: false
 
       ## Recoverable
