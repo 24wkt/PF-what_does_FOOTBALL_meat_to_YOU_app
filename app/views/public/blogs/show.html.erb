@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <%= render 'layouts/header' %>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <%= attachment_image_tag(@blog, :blog_image, :fill, 900, 450) %>
+      <h3><%= @blog.title %>&emsp;(<%= @blog.created_at.strftime('%Y/%m/%d') %>)</h3>
+      <% if current_end_user %>
+        <%= link_to "Edit", edit_blog_path(@blog), class: "btn btn-sm btn-primary" %>
+        <%= link_to "Delete", blog_path(@blog), method: :delete, data: { confirm: '投稿を削除してよろしいでしょうか？'}, class: "btn btn-sm btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <%= @blog.body %>
+    </div>
+  </div>
+  <div class="row">
+    <h5>Comments</h5>
+  </div>
+  <div class="row">
+    <%= render 'layouts/footer' %>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <%= render 'layouts/header' %>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <h3>List of Blogs</h3>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th></th>
+            <th>title</th>
+            <th>user name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @blogs.each do |blog| %>
+          <tr>
+            <td><%= attachment_image_tag(blog, :blog_image, size: "100x50", fallback: "no-image-mini.jpg") %></td>
+              <td>
+                <%= link_to blog_path(blog) do %>
+                  <%= blog.title %>
+                <% end %>
+              </td>
+            <td><%= blog.end_user_id%></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <%= render 'layouts/footer' %>
+  </div>
+</div>

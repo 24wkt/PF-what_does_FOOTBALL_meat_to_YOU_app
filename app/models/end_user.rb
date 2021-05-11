@@ -4,5 +4,6 @@ class EndUser < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :blogs, dependent: :destroy
   attachment :profile_image, destroy: false
 end
