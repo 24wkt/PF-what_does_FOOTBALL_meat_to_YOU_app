@@ -1,0 +1,45 @@
+<!-- 管理者側のエンドユーザー一覧ページ -->
+<div class="container">
+  <div class="row">
+    <%= render 'layouts/header' %>
+  </div>
+  <div class="row">
+    <h3>List of Enduser</h3>
+    <div class="col-sm-12">
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>EndUser ID</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>EndUser status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @end_users.each do |end_user| %>
+            <tr>
+              <td><%= end_user.id %></td>
+              <td>
+                <%= link_to admin_end_user_path(end_user) do %>
+                  <%= attachment_image_tag(end_user, :profile_image, size: '60x60', fallback: "no-image-icon.jpg") %>
+                  <%= end_user.name %>
+                <% end %>
+              </td>
+              <td><%= end_user.email %></td>
+              <td>
+                <% if end_user.is_deleted == "false" %>
+                  <p>有効</p>
+                <% else %>
+                  <p>無効</p>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <%= render 'layouts/footer' %>
+  </div>
+</div>

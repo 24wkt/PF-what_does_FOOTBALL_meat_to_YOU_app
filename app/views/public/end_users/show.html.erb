@@ -9,7 +9,7 @@
     </div>
     <div class="col-sm-5">
       <h3><%= @end_user.name %></h3><br />
-      <h5>Follows : <%= @end_user.followings.count %>&emsp;Followers : <%= @end_user.followers.count %></h5><br />
+      <h5>Follows : <%= link_to @end_user.followings.count, follows_end_user_path %>&emsp;Followers : <%= link_to @end_user.followers.count, followers_end_user_path %></h5><br />
       <% if @end_user == current_end_user %>
         <%= link_to "Create Blog", new_blog_path, class: "btn btn-sm btn-success" %>
         <%= link_to "Edit", edit_end_user_path(current_end_user), class: "btn btn-sm btn-primary" %>

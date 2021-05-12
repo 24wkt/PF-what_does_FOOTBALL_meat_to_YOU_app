@@ -1,0 +1,50 @@
+<!-- 管理者側のエンドユーザー詳細ページ -->
+<div class="container">
+  <div class="row">
+    <%= render 'layouts/header' %>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <%= attachment_image_tag(@end_user, :profile_image, size: '60x60', fallback: "no-image-icon.jpg") %>
+    </div>
+    <div class="col-sm-8">
+      <h3><%= @end_user.name %></h3><br />
+      <% if @end_user.is_deleted == "false" %>
+        <h5>User Status: 有効</h5>
+      <% else %>
+        <h5>User Status: 無効</h5>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= @end_user.introduction %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <h4>List of User's Blogs</h4>
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>Date Posted</th>
+            <th>Title</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @blogs.each do |blog| %>
+            <tr>
+              <td><%= blog.created_at.strftime('%Y/%m/%d') %></td>
+              <td><%= blog.title %></td>
+              <td><%= link_to "show", admin_blog_path(blog.end_user) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <%= render 'layouts/footer' %>
+  </div>
+</div>

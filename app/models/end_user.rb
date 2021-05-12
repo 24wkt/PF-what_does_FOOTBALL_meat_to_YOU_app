@@ -7,6 +7,9 @@ class EndUser < ApplicationRecord
   has_many :blogs, dependent: :destroy
   attachment :profile_image, destroy: false
 
+  # 会員ステータスを適用
+  
+
   # フォローに関する記述（フォローする）
   has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
   has_many :followings, through: :active_relationships, source: :follower
