@@ -1,3 +1,4 @@
+<!-- エンドユーザー側のマイページ / ユーザー詳細ページ -->
 <div class="container">
   <div class="row">
     <%= render 'layouts/header' %>
@@ -7,11 +8,18 @@
       <%= attachment_image_tag(@end_user, :profile_image, size: '60x60', fallback: "no-image-icon.jpg") %>
     </div>
     <div class="col-sm-5">
-      <%= @end_user.name %><br />
-      <% if current_end_user %>
+      <h3><%= @end_user.name %></h3><br />
+      <h5>Follows : <%= @end_user.followings.count %>&emsp;Followers : <%= @end_user.followers.count %></h5><br />
+      <% if @end_user == current_end_user %>
         <%= link_to "Create Blog", new_blog_path, class: "btn btn-sm btn-success" %>
         <%= link_to "Edit", edit_end_user_path(current_end_user), class: "btn btn-sm btn-primary" %>
         <%= link_to "Withdraw", unsubscribe_end_users_path, class: "btn btn-sm btn-danger" %>
+      <% else %>
+        <% if @end_user.followed_by?(current_end_user) %>
+          <%= link_to "unfollow", end_user_relationships_path(@end_user.id), method: :delete, class: "btn btn-sm btn-primary" %>
+        <% else %>
+          <%= link_to "follow", end_user_relationships_path(@end_user.id), method: :post, class: "btn btn-sm btn-outline-primary" %>
+        <% end %>
       <% end %>
     </div>
   </div>

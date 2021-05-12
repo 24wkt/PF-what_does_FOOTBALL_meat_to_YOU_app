@@ -28,6 +28,9 @@ scope module: :public do
 
   # エンドユーザーに関するルーティング
   resources :end_users, only: [:index, :show, :edit, :update] do
+    resource :relationships, only:[:index, :create, :destroy]
+      get :follows, on: :member
+      get :followers, on: :member
     collection do
       # 退会確認ページ
       get 'unsubscribe' => 'end_users#unsubscribe'
