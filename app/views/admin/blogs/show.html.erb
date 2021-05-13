@@ -1,0 +1,40 @@
+<!-- 管理者側の投稿詳細ページ -->
+<div class="container">
+  <div class="row">
+    <%= render 'layouts/header' %>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= attachment_image_tag(@blog, :blog_image, :fill, 900, 450) %>
+      <h3><%= @blog.title %>&ensp;(<%= @blog.created_at.strftime('%Y/%m/%d') %>)</h3>
+      <h4><%= @blog.end_user.name %></h4>
+      <% if current_end_user %>
+        <%= link_to "Edit", edit_blog_path(@blog), class: "btn btn-sm btn-primary" %>
+        <%= link_to "Delete", blog_path(@blog), method: :delete, data: { confirm: '投稿を削除してよろしいでしょうか？'}, class: "btn btn-sm btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= @blog.body %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 fas fa-heart heart_red">
+      <%= @blog.likes.count %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 comment_counts">
+      <h5>Comments(<%= @blog.comments.count %>)</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 comment_index">
+      <%= render 'render/comment', blog: @blog %>
+    </div>
+  </div>
+  <div class="row">
+    <%= render 'layouts/footer' %>
+  </div>
+</div>

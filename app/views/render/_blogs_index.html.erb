@@ -1,0 +1,29 @@
+<h3>List of Blogs</h3>
+  <table class="table table-hover table-bordered">
+    <tbody>
+      <% blogs.each do |blog| %>
+      <tr>
+        <td class="text-center"><%= attachment_image_tag(blog, :blog_image, size: "200x120", fallback: "no-image-mini.jpg") %></td>
+        <td class="pt-4">
+          <% if end_user_signed_in? %>
+            <%= link_to blog_path(blog) do %>
+              <%= blog.title %>
+            <% end %>
+          <% else %>
+            <%= link_to admin_blog_path(blog) do %>
+              <%= blog.title %>
+            <% end %>
+          <% end %>
+          <div class="fas fa-heart heart_red pl-2">
+            <%= blog.likes.count %>
+          </div>
+          <br />
+          <%= link_to end_user_path(blog.end_user) do %>
+            <%= attachment_image_tag(blog.end_user, :profile_image, size: "60x60", fallback: "no-image-icon.jpg") %>
+            <%= blog.end_user.name %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
