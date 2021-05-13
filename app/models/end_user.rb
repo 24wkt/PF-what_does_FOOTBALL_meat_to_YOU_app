@@ -14,6 +14,9 @@ class EndUser < ApplicationRecord
   # コメントに関するリレーション
   has_many :comments, dependent: :destroy
 
+  # ブックマークに関するリレーション
+  has_many :bookmarks, dependent: :destroy
+
 
   # 会員ステータスを適用
 

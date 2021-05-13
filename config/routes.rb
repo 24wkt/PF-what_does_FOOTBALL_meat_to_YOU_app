@@ -46,6 +46,8 @@ scope module: :public do
     resource :likes, only: [:create, :destroy]
     # コメント機能
     resources :comments, only: [:create, :destroy]
+    # ブックマーク機能
+    resource :bookmarks, only: [:create, :destroy]
   end
 end
 end

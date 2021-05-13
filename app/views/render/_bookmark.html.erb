@@ -1,0 +1,5 @@
+<% if blog.bookmarked_by?(current_end_user) %>
+  <%= link_to "Unbookmark", blog_bookmarks_path(blog), method: :delete, remote: true, class: "fas fa-bookmark" %>
+<% else %>
+  <%= link_to "Bookmark!", blog_bookmarks_path(blog), method: :post, remote: true, class: "far fa-bookmark" %>
+<% end %>

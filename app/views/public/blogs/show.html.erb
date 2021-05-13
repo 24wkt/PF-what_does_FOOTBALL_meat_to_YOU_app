@@ -20,8 +20,11 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-8 like_<%= @blog.id %>">
+    <div class="col-sm-4 like_<%= @blog.id %>">
       <%= render 'render/like', blog: @blog %>
+    </div>
+    <div class="col-sm-4">
+      <%= render 'render/bookmark', blog: @blog %>
     </div>
   </div>
   <div class="row">
