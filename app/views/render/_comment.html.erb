@@ -1,0 +1,20 @@
+<table>
+  <% blog.comments.each do |comment| %>
+    <% comment_end_user = comment.end_user %>
+      <tr>
+        <td>
+          <%= link_to end_user_path(comment_end_user) do %>
+            <%= attachment_image_tag(comment_end_user, :profile_image, size: '60x60', fallback: "no-image-icon.jpg") %>
+            <%= comment_end_user.name %>
+          <% end %>
+        </td>
+        <td class=" text-center pr-3 pl-3"><%= comment.comment %></td>
+        <td class="pr-5"><%= comment.created_at.strftime('%Y/%m/%d') %></td>
+        <% if current_end_user == comment_end_user %>
+          <td>
+            <%= link_to "Destroy", blog_comment_path(comment.blog.id, comment.id), method: :delete, remote: true, class: "btn btn-sm btn-danger" %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+</table>
