@@ -3,10 +3,13 @@ class EndUser < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+  
+  # 投稿に関するリレーション
   has_many :blogs, dependent: :destroy
   attachment :profile_image, destroy: false
-
+  
+  # いいねに関するリレーション
+  has_many :likes, dependent: :destroy
   # 会員ステータスを適用
   
 

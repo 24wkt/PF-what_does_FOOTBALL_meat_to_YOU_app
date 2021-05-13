@@ -33,7 +33,7 @@
           </tr>
         </thead>
         <tbody>
-          <% @blogs.each do |blog| %>
+          <% @end_user.blogs.each do|blog| %>
             <tr>
               <td><%= blog.created_at.strftime('%Y/%m/%d') %></td>
               <td><%= blog.title %></td>

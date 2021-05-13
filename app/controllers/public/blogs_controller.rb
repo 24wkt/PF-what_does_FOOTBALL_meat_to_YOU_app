@@ -6,6 +6,7 @@ class Public::BlogsController < ApplicationController
 
   def create
     @blog = Blog.new(blog_params)
+    @blog.end_user_id = current_end_user.id
     if @blog.save
       redirect_to blog_path(@blog)
     else

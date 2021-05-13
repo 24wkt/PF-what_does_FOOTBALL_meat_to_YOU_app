@@ -1,0 +1,5 @@
+<% if blog.liked_by?(current_end_user) %>
+  <%= link_to blog.likes.count, blog_likes_path(blog), method: :delete, remote: true, class: "fas fa-heart heart_red" %>
+<% else %>
+  <%= link_to blog.likes.count, blog_likes_path(blog), method: :post, remote: true, class: "fas fa-heart heart_blue" %>
+<% end %>

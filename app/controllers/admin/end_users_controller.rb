@@ -6,6 +6,6 @@ class Admin::EndUsersController < ApplicationController
 
   def show
     @end_user = EndUser.find(params[:id])
-    @blogs = @end_user.blogs.all
+    @blogs = @end_user.blogs
   end
 end
