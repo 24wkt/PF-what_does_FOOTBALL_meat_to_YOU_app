@@ -1,0 +1,75 @@
+<ul class="tab-list">
+  <li class="tab box-active">My Blogs</li>
+  <li class="tab">Liked Blogs</li>
+  <li class="tab">Bookmark</li>
+</ul>
+<div class="tabbox-contents">
+  <div class="tabbox box-show">
+    <table class="table table-hover table-border">
+      <tbody>
+        <%= end_user.blogs.each do |blog| %>
+          <tr>
+            <td class="text-center"><%= attachment_image_tag(blog, :blog_image, size: "100x50", fallback: "no-image-mini.jpg") %></td>
+            <td>
+              <%= link_to blog_path(blog) do %>
+                <%= blog.title %>
+              <% end %>
+              <br />
+              <%= link_to end_user_path(blog.end_user) do %>
+                <%= blog.end_user.name %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="tabbox">
+    <table class="table table-hover table-border">
+      <% if likes.exists? %>
+        <tbody>
+          <%= likes.each do |like| %>
+            <tr>
+              <td class="text-center"><%= attachment_image_tag(like, :blog_image, size: "100x50", fallback: "no-image-mini.jpg") %></td>
+              <td>
+                <%= link_to blog_path(like) do %>
+                  <%= like.title %>
+                <% end %>
+                <br />
+                <%= link_to end_user_path(like.end_user) do %>
+                  <%= like.end_user.name %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <p>No Likes.</p>
+        <% end %>
+        </tbody>
+    </table>
+  </div>
+  <!--<div class="tabbox">
+    <table class="table table-hover table-border">
+      < if bookmarks.exists? >
+        <tbody>
+          < bookmarks.each do |bookmark| %>
+            <tr>
+              <td class="text-center">< attachment_image_tag(bookmark, :blog_image, size: "100x50", fallback: "no-image-mini.jpg") %></td>
+              <td>
+                < link_to blog_path(bookmark) do %>
+                  < bookmark.title %>
+                < end %>
+                <br />
+                < link_to end_user_path(bookmark.end_user) do %>
+                  < bookmark.end_user.name %>
+                 end %>
+              </td>
+            </tr>
+          < end %>
+        < else %>
+          <p>No Bookmarks.</p>
+        < end %>
+        </tbody>
+    </table>
+  </div>-->
+</div>

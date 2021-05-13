@@ -6,6 +6,8 @@ class Public::EndUsersController < ApplicationController
 
   def show
     @end_user = EndUser.find(params[:id])
+    @likes = Like.where(end_user_id: @end_user.id)
+    #@bookmarks = @end_user.bookmarks
   end
 
   def follows

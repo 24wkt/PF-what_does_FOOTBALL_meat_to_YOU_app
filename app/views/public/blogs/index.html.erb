@@ -6,23 +6,19 @@
     <div class="col-sm-8">
       <h3>List of Blogs</h3>
       <table class="table table-hover table-bordered">
-        <thead>
-          <tr>
-            <th></th>
-            <th>title</th>
-            <th>user name</th>
-          </tr>
-        </thead>
         <tbody>
           <% @blogs.each do |blog| %>
           <tr>
-            <td><%= attachment_image_tag(blog, :blog_image, size: "100x50", fallback: "no-image-mini.jpg") %></td>
-              <td>
-                <%= link_to blog_path(blog) do %>
-                  <%= blog.title %>
-                <% end %>
-              </td>
-            <td><%= blog.end_user.name %></td>
+            <td class="text-center"><%= attachment_image_tag(blog, :blog_image, size: "100x50", fallback: "no-image-mini.jpg") %></td>
+            <td>
+              <%= link_to blog_path(blog) do %>
+                <%= blog.title %>
+              <% end %>
+              <br />
+              <%= link_to end_user_path(blog.end_user) do %>
+                <%= blog.end_user.name %>
+              <% end %>
+            </td>
           </tr>
           <% end %>
         </tbody>
