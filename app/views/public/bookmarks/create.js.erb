@@ -1,0 +1,1 @@
+$('.bookmark_<%= @blog.id %>').html("<%= j(render partial: 'render/bookmark', locals: {blog: @blog}) %>");
