@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TagmapTest < ActiveSupport::TestCase
+class TagMapTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

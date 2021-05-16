@@ -6,6 +6,8 @@ class EndUser < ApplicationRecord
 
   # 投稿に関するリレーション
   has_many :blogs, dependent: :destroy
+
+  # エンドユーザーのアイコン画像
   attachment :profile_image, destroy: false
 
   # いいねに関するリレーション
@@ -16,7 +18,6 @@ class EndUser < ApplicationRecord
 
   # ブックマークに関するリレーション
   has_many :bookmarks, dependent: :destroy
-
 
   # 会員ステータスを適用
 

@@ -7,7 +7,9 @@ class Public::BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     @blog.end_user_id = current_end_user.id
+    tag_list = params[:blog][:tag_name].split(nil)
     if @blog.save
+      @blog.save_tag(tag_list)
       redirect_to blog_path(@blog)
     else
       render :new
@@ -20,6 +22,7 @@ class Public::BlogsController < ApplicationController
 
   def show
     @blog = Blog.find(params[:id])
+    @blog_tags = @blog.tags
     @comment = Comment.new
   end
 

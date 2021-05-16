@@ -5,7 +5,7 @@ class Public::CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.blog_id = @blog.id
     @comment.end_user_id = current_end_user.id
-    @comment.save!
+    @comment.save
   end
 
   def destroy
