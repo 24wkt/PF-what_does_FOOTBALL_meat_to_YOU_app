@@ -21,6 +21,7 @@
 
 .front-container {
   background-image: image-url("football-690684_1920.jpg");
+  width: 100%;
   height: 800px;
   background-size: cover;
 }
@@ -30,6 +31,6 @@
   color: #fff;
 }
 
-.app-introduction {
+.app-introduction, .about-introduction, .pege-heading, .form-item, .link {
   color: #fff;
 }
