@@ -18,3 +18,18 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+.front-container {
+  background-image: image-url("football-690684_1920.jpg");
+  height: 800px;
+  background-size: cover;
+}
+
+.app-title {
+  font-size: 90px;
+  color: #fff;
+}
+
+.app-introduction {
+  color: #fff;
+}
