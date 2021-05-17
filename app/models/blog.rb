@@ -33,7 +33,6 @@ class Blog < ApplicationRecord
     new_tags = sent_tags - current_tags
 
     old_tags.each do |old|
-      #self.tag_maps.delete Tag.find_by(tag_name: old)
       old_tag = Tag.find_by(tag_name: old)
       self.tag_maps.find_by(tag_id: old_tag.id).destroy
     end
@@ -41,7 +40,6 @@ class Blog < ApplicationRecord
     new_tags.each do |new|
       new_blog_tag = Tag.find_or_create_by(tag_name: new)
       self.tag_maps.create(tag_id: new_blog_tag.id)
-      #self.tag_maps << new_blog_tag
     end
   end
 

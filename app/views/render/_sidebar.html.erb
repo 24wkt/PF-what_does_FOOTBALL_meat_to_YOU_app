@@ -1,0 +1,40 @@
+<div class="container border border-dark mt-4">
+  <div class="row">
+    <div class="col-sm-12 text-center pt-2">
+      <%= attachment_image_tag(end_user, :profile_image, size: '100x100', fallback: "no-image-icon.jpg") %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 text-center pt-2">
+      <h5><%= end_user.name %></h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <p>Follows : <%= end_user.followings.count %>&emsp;Followers : <%= end_user.followers.count %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <h5>#FOOTBALL for Me</h5>
+      <P><%= end_user.introduction %></P>
+    </div>
+  </div>
+  <div class="row pt-3 pb-2">
+    <div class="col-sm-12 text-center">
+      <%= link_to "Show", end_user_path(end_user), class: "btn btn-sm btn-success" %>
+      <%= link_to "Edit", edit_end_user_path(end_user), class: "btn btn-sm btn-primary" %>
+    </div>
+  </div>
+</div>
+
+<div class="container border border-dark mt-4">
+  <div class="row">
+    <div class="col-sm-12">
+      <h5>#Tags</h5>
+      <% tags.each do |tag| %>
+        <%= tag.tag_name %>
+      <% end %>
+    </div>
+  </div>
+</div>

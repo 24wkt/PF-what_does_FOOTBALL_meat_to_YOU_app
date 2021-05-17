@@ -1,3 +1,11 @@
 // Place all the styles related to the public::homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.public-image {
+  background-image: image-url("football-690684_1920.jpg");
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}

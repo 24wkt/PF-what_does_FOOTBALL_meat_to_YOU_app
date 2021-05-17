@@ -1,17 +1,16 @@
-<h3>List of Blogs</h3>
-  <table class="table table-hover table-bordered">
-    <tbody>
-      <% blogs.each do |blog| %>
+<table class="table table-hover table-bordered">
+  <tbody>
+    <% blogs.each do |blog| %>
       <tr>
         <td class="text-center"><%= attachment_image_tag(blog, :blog_image, size: "200x120", fallback: "no-image-mini.jpg") %></td>
         <td class="pt-4">
           <% if end_user_signed_in? %>
             <%= link_to blog_path(blog) do %>
-              <%= blog.title %>
+              <h5><%= blog.title %>&ensp;(<%= blog.created_at.strftime('%Y/%m/%d') %>)</h5>
             <% end %>
           <% else %>
             <%= link_to admin_blog_path(blog) do %>
-              <%= blog.title %>
+              <h5><%= blog.title %></h5>
             <% end %>
           <% end %>
           <div class="fas fa-heart heart_red pl-2">
@@ -24,6 +23,6 @@
           <% end %>
         </td>
       </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <% end %>
+  </tbody>
+</table>

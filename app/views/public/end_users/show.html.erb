@@ -4,8 +4,8 @@
     <%= render 'layouts/header' %>
   </div>
   <div class="row">
-    <div class="col-sm-3">
-      <%= attachment_image_tag(@end_user, :profile_image, size: '60x60', fallback: "no-image-icon.jpg") %>
+    <div class="col-sm-3 text-center">
+      <%= attachment_image_tag(@end_user, :profile_image, size: '150x150', fallback: "no-image-icon.jpg") %>
     </div>
     <div class="col-sm-5">
       <h3><%= @end_user.name %></h3><br />
