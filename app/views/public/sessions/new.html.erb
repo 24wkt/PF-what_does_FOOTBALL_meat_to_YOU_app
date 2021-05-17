@@ -1,4 +1,4 @@
-<div class="front-container">
+<div class="container front-image">
   <div class="row pb-5">
     <div class="col-sm-12">
       <%= link_to "HOME", root_path %>
@@ -10,6 +10,9 @@
   <div class="row">
     <div class="col-sm-12 text-center mb-3">
       <h1 class="pege-heading">User Login</h1>
+      <% if flash[:danger] %>
+        <p class= "message-danger"><%= flash[:dander] %></p>
+      <% end %>
     </div>
   </div>
 

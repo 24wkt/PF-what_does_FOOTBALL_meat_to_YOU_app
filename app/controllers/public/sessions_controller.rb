@@ -25,9 +25,22 @@ class Public::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
 
-  # サインアップ後のログイン先（仮置き＝＞最後はマイページに飛ばす）
+  # サインイン後の遷移先
   def after_sign_in_path_for(resource)
-    end_users_home_path
+    end_user_path(current_end_user)
   end
+
+  protected
+    def reject_end_user
+      end_user = EndUser.find_by(email: params[:end_user][:email].downcase)
+      if end_user
+        if (end_user.valid_password?(params[:end_user][:password]) && (end_user.active_for_authentication? == false))
+          flash[:danger] = 'このユーザーは退会済みです。申し訳ございませんが、別のメールアドレスをお使いください'
+          redirect_to new_end_user_session_path
+        end
+      else
+        flash[:danger] = " 必要項目を入力してください。"
+      end
+    end
 
 end

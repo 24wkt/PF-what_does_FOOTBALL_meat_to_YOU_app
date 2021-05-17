@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  # ログアウト、退会後の遷移先
+  def after_sign_out_path_for(resource)
+      root_path
+  end
+
   def configure_permitted_parameters
     # エンドユーザー側の新規登録情報時に下記項目の操作を許可
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email])

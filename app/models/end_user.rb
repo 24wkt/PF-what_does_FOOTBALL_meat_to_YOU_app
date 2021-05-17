@@ -20,7 +20,7 @@ class EndUser < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
 
   # 会員ステータスを適用
-
+  enum is_deleted: {有効: false, 退会: true }
 
   # フォローに関する記述（フォローする）
   has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
@@ -33,6 +33,11 @@ class EndUser < ApplicationRecord
   # 既にフォローしている人をフォローしないようにするメソッド
   def followed_by?(end_user)
     passive_relationships.find_by(following_id: end_user.id).present?
+  end
+
+  # 退会ユーザーをログインできなくするメソッド
+  def active_for_authentication?
+    super && (self.is_deleted == "有効")
   end
 
 end
