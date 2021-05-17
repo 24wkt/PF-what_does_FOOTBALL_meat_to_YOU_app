@@ -19,10 +19,9 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
-.front-image {
+.jumbotron {
   background-image: image-url("football-690684_1920.jpg");
-  height: 1000px;
-  width: 100%;
+  height: 100vh;
   background-size: cover;
 }
 
