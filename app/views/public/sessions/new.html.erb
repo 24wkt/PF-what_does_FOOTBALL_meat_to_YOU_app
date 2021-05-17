@@ -2,12 +2,9 @@
   <div class="container">
     <div class="row pb-5">
       <div class="col-sm-12">
-        <%= link_to "HOME", root_path %>
-        <%= link_to "ABOUT", about_path %>
-        <%= link_to "SIGN UP", new_end_user_registration_path %>
-        <%= link_to "SIGN IN", new_end_user_session_path %>
+        <%= render 'render/frontmenu' %>
       </div>
-    </div><di
+    </div>
     <div class="row">
       <div class="col-sm-12 text-center mb-3">
         <h1 class="pege-heading">User Login</h1>

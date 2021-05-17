@@ -2,26 +2,35 @@
   <div class="container">
     <div class="row pb-5">
       <div class="col-sm-12">
-        <%= link_to "HOME", root_path %>
-        <%= link_to "ABOUT", about_path %>
-        <%= link_to "SIGN UP", new_end_user_registration_path %>
-        <%= link_to "SIGN IN", new_end_user_session_path %>
+        <%= render 'render/frontmenu' %>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12 text-center">
-        <h1 class="pege-heading">About Me</h1>
+        <h1 class="pege-heading">あなたにとってのサッカーを見つけましょう</h1>
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-4">
       <div class="col-sm-6 text-center">
-        <p class="about-introduction">サッカーをこよなく愛する人々へ</p>
+        <p class="about-introduction">
+          Jリーグ発足以降、急激に進化を続ける日本サッカー。<br />
+          ITの進化に伴ったグローバル化で欧州の知見が輸入され、<br />
+          テクニックや戦術が進化していったことは言うまでもない。<br />
+          競技レベルの向上は観る人を熱狂させ、感動を味合わせてくれる。<br />
+          しかし、観る人のサッカー観は醸成されているのだろうか？
+        </p>
       </div>
       <div class="col-sm-6 text-center">
-        <p class="about-introduction">ここにテキストを書く</p>
+        <p class="about-introduction">
+          あなたにとってのサッカーを見つけるために<br />
+          ユーザーの数だけある価値観に触れて、サッカーとは何かを追求しよう。<br />
+          サッカーをこよなく愛する人たちの想いや考えが<br />
+          サッカーをさらに面白く、魅力的なものにしてくれることでしょう。<br />
+          さあ、あなたにとってのサッカーを見つけに行きましょう。
+        </p>
       </div>
     </div>
-    <div class="row">
+    <div class="row mt-2">
       <div class="col-sm-12 text-center">
         <%= link_to "Back", root_path, class: "link" %>
       </div>
