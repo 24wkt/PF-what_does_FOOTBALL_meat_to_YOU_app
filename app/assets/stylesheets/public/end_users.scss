@@ -11,6 +11,13 @@
   bottom: 55px;
 }
 
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>thead>tr>th {
+    border-style: none;
+}
+
+
 /* ↓ここから下は、ブラウザがデフォルトで持っているCSSを打ち消すCSS↓ */
 html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
   margin: 0;

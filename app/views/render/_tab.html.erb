@@ -1,11 +1,12 @@
-<ul class="tab-list">
+<ul class="tab-list border ">
   <li class="tab box-active">My Blogs</li>
   <li class="tab">Liked Blogs</li>
   <li class="tab">Bookmark</li>
 </ul>
 <div class="tabbox-contents">
   <div class="tabbox box-show">
-    <table class="table table-hover table-border">
+    <table class="table">
+      <% if end_user.blogs.exists? %>
       <tbody>
         <% end_user.blogs.each do |blog| %>
           <tr>
@@ -21,16 +22,19 @@
             </td>
           </tr>
         <% end %>
+      <% else %>
+        <h5 class="text-center">No Blogs.</h5>
+      <% end %>
       </tbody>
     </table>
   </div>
   <div class="tabbox">
-    <table class="table table-hover">
+    <table class="table">
       <% if end_user.likes.exists? %>
         <tbody>
           <% end_user.likes.each do |like| %>
             <tr>
-              <td><%= attachment_image_tag(like.blog, :blog_image, size: "100x50", fallback: "no-image-mini.jpg") %></td>
+              <td class="text-center"><%= attachment_image_tag(like.blog, :blog_image, size: "100x50", fallback: "no-image-mini.jpg") %></td>
               <td>
                 <%= link_to blog_path(like.blog) do %>
                   <%= like.blog.title %>
@@ -43,18 +47,18 @@
             </tr>
           <% end %>
         <% else %>
-          <p>No Likes.</p>
+          <h5 class="text-center">No Likes.</h5>
         <% end %>
         </tbody>
     </table>
   </div>
   <div class="tabbox">
-    <table class="table table-hover table-border">
+    <table class="table">
       <% if end_user.bookmarks.exists? %>
         <tbody>
           <% end_user.bookmarks.each do |bookmark| %>
             <tr>
-              <td><%= attachment_image_tag(bookmark.blog, :blog_image, size: "100x50", fallback: "no-image-mini.jpg") %></td>
+              <td class="text-center"><%= attachment_image_tag(bookmark.blog, :blog_image, size: "100x50", fallback: "no-image-mini.jpg") %></td>
               <td>
                 <%= link_to blog_path(bookmark.blog) do %>
                   <%= bookmark.blog.title %>
@@ -67,7 +71,7 @@
             </tr>
           <% end %>
         <% else %>
-          <p>No Bookmarks.</p>
+          <h5 class="text-center">No Bookmarks.</h5>
         <% end %>
         </tbody>
     </table>
