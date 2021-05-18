@@ -5,14 +5,17 @@ class Public::SearchController < ApplicationController
     @method = params["method"]
     @content = params["content"]
     @records = search_for(@model, @method, @content)
+    # サイドバーに関する記述
+    @end_user = current_end_user
+    @tags = Tag.all
   end
 
   private
 
-  def search_for(model, content, method)
+  def search_for(model, method, content)
     if model == "end_user"
       if method == 'match'
-        EmdUser.where(name: content)
+        EndUser.where(name: content)
       elsif method == 'forword'
         EndUser.where('name LIKE ?', "#{content}%")
       elsif method == 'backward'
