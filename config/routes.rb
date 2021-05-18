@@ -26,6 +26,9 @@ scope module: :public do
   get 'end_users/home' => 'homes#top'
   get 'end_users/about' => 'homes#about'
 
+  # 検索に関するルーティング設定
+  get '/sarch' => 'search#search'
+
   # エンドユーザーに関するルーティング
   resources :end_users, only: [:index, :show, :edit, :update] do
     resource :relationships, only:[:index, :create, :destroy]
