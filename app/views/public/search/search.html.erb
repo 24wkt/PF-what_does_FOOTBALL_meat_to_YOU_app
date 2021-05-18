@@ -6,53 +6,43 @@
     </div>
   </div>
 
-  <% if @model == "end_user" %>
-    <div class="row">
-      <div class="col-sm-8">
-      <h3>Users search for '<%= @content %> '</h3>
-        <table class="table table-hover table^bordered">
-          <thead class="thead-ligth">
-            <tr>
-              <th>User ID</th>
-              <th>User Name</th>
-              <th>Introduction</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @records.each do |end_user| %>
-              <tr>
-                <td><%= end_user.id %></td>
-                <td>
-                  <%= link_to end_user_path(end_user) do %>
-                    <%= attachment_image_tag(end_user, :profile_image, size: '60x60', fallback: "no-image-icon.jpg") %>
-                    <%= end_user.name %>
-                  <% end %>
-                </td>
-                <td><%= end_user.introduction %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+  <% if @records.exists? %>
+    <% if @model == "end_user" %>
+      <div class="row">
+        <div class="col-sm-8">
+          <h3>Users search for '<%= @content %> '</h3>
+          <%= render 'render/end_user_index', end_users: @records %>
+        </div>
+        <div class="col-sm-3">
+          <%= render 'render/sidebar', end_user: @end_user, tags: @tags %>
+        </div>
       </div>
-      <div class="col-sm-3">
-        <%= render 'render/sidebar', end_user: @end_user, tags: @tags %>
-      </div>
-    </div>
 
-  <% elsif @model == "blog" %>
+    <% elsif @model == "blog" %>
+      <div class="row">
+        <div class="col-sm-8">
+          <h3>Blogs search for "<%= @content %>"</h3>
+          <%= render 'render/blogs_index', blogs: @records %>
+        </div>
+        <div class="col-sm-3">
+          <%= render 'render/sidebar', end_user: @end_user, tags: @tags %>
+        </div>
+      </div>
+    <% end %>
+<% else %>
     <div class="row">
       <div class="col-sm-8">
-        <h3>Blogs search for "<%= @content %>"</h3>
-        <%= render 'render/blogs_index', blogs: @records %>
+        <h3>Users search for '<%= @content %> '</h3>
+        <h4 class="text-center mt-5">There are not Users.</h4>
       </div>
       <div class="col-sm-3">
         <%= render 'render/sidebar', end_user: @end_user, tags: @tags %>
       </div>
     </div>
-  <% end %>
+<% end %>
 
   <div class="row">
-    <div class="col-sm-12 text-center">
+    <div class="col-sm-12">
       <%= render 'layouts/footer' %>
     </div>
   </div>

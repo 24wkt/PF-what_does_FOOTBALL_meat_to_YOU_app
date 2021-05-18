@@ -29,14 +29,15 @@
         <h4>FOOTBALL for Me</h4>
         <h5><%= @end_user.introduction %></h5>
       </div>
+      <div>
+        <%= render 'render/tab', end_user: @end_user %>
+      </div>
     </div>
     <div class="col-sm-3">
       <%= render 'render/sidebar', end_user: @current_end_user, tags: @tags %>
     </div>
   </div>
-  <div class="col-sm-8">
-    <!-- render 'render/tab', end_user: @end_user, likes: @likes -->
-  </div>
+
   <div class="row">
     <div class="col-sm-12 text-center">
       <%= render 'layouts/footer' %>

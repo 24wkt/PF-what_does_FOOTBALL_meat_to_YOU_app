@@ -54,5 +54,6 @@ scope module: :public do
     # ブックマーク機能
     resource :bookmarks, only: [:create, :destroy]
   end
+
 end
 end

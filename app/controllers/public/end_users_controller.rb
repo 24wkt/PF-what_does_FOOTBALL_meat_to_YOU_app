@@ -6,7 +6,7 @@ class Public::EndUsersController < ApplicationController
 
   def show
     @end_user = EndUser.find(params[:id])
-    @likes = Like.where(end_user_id: @end_user.id)
+    #@likes = Like.where(end_user_id: @end_user.id)
     #@bookmarks = @end_user.bookmarks
     # サイドバーに関する記述
     @current_end_user = current_end_user
