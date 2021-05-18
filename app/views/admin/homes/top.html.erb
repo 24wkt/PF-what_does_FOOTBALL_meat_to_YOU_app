@@ -1,11 +1,27 @@
 <!-- 管理者側のトップページ -->
 <div class="container">
   <div class="row">
-    <%= render 'layouts/header' %>
+    <div class="col-sm-12 text-center">
+      <%= render 'layouts/header' %>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-sm-4 text-center">
+      <h5 class="mb-3">Users Management Page</h5>
+      <%= link_to "Show", admin_end_users_path, class: "btn btn-lg btn-success" %>
+    </div>
+    <div class="col-sm-4 text-center">
+      <h5 class="mb-3">Blogs Management Page</h5>
+      <%= link_to "Show", admin_blogs_path, class: "btn btn-lg btn-success" %>
+    </div>
+    <div class="col-sm-4 text-center">
+      <h5>Search</h5>
+      <%= render 'render/search_form' %>
+    </div>
   </div>
   <div class="row">
-    <%= render 'layouts/footer' %>
-  </div>
-
+    <div class="col-sm-12 text-center">
+      <%= render 'layouts/footer' %>
+    </div>
   </div>
 </div>

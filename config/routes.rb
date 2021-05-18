@@ -8,6 +8,8 @@ devise_for :admin, controllers: {
 # 管理者側のルーティング設定
 namespace :admin do
   get 'top' => 'homes#top', as: 'top'
+  # 検索に関するルーティング
+  get '/search' => 'search#search'
   resources :end_users, only: [:index, :show]
   resources :blogs, only: [:index, :show]
 end
@@ -27,7 +29,7 @@ scope module: :public do
   get 'end_users/about' => 'homes#about'
 
   # 検索に関するルーティング設定
-  get '/sarch' => 'search#search'
+  get '/search' => 'search#search'
 
   # エンドユーザーに関するルーティング
   resources :end_users, only: [:index, :show, :edit, :update] do

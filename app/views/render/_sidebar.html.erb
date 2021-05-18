@@ -31,12 +31,7 @@
 <div class="container mt-4">
   <div class="row">
     <div class="col-sm-12">
-      <%= form_tag(sarch_path, method: :get) do %>
-        <%= select_tag 'model', options_for_select({"User" => "end_user", "Blog" => "blog"}) %>
-        <%= select_tag 'method', options_for_select({"完全一致" => "match", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partical"}) %>
-        <%= text_field_tag 'content' %>
-        <%= submit_tag :search, class: "btn btn-sm btn-secondary" %>
-      <% end %>
+      <%= render 'render/search_form' %>
   </div>
 </div>
 

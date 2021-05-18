@@ -1,0 +1,53 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <%= render 'layouts/header' %>
+    </div>
+  </div>
+
+  <% if @model == "end_user" %>
+    <div class="row">
+      <div class="col-sm-12">
+      <h3>Users search for '<%= @content %> '</h3>
+        <table class="table table-hover table^bordered">
+          <thead class="thead-ligth">
+            <tr>
+              <th>User ID</th>
+              <th>User Name</th>
+              <th>Introduction</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @records.each do |end_user| %>
+              <tr>
+                <td><%= end_user.id %></td>
+                <td>
+                  <%= link_to end_user_path(end_user) do %>
+                    <%= attachment_image_tag(end_user, :profile_image, size: '60x60', fallback: "no-image-icon.jpg") %>
+                    <%= end_user.name %>
+                  <% end %>
+                </td>
+                <td><%= end_user.introduction %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  <% elsif @model == "blog" %>
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Blogs search for "<%= @content %>"</h3>
+        <%= render 'render/blogs_index', blogs: @records %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <%= render 'layouts/footer' %>
+    </div>
+  </div>
+</div>
