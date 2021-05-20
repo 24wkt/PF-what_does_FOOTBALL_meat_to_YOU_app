@@ -1,5 +1,7 @@
 class Public::EndUsersController < ApplicationController
 
+  before_action :authenticate_end_user!
+
   def index
     @end_users = EndUser.all
   end

@@ -1,5 +1,7 @@
 class Public::BlogsController < ApplicationController
 
+  before_action :authenticate_end_user!
+
   def new
     @blog = Blog.new
     # サイドバーに関する定義

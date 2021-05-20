@@ -1,5 +1,7 @@
 class Public::HomesController < ApplicationController
 
+  before_action :authenticate_end_user!
+
   def top
     # 新着ブログに関する記述
     @blogs = Blog.all.order(created_at: :desc)
