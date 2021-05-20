@@ -1,5 +1,5 @@
 <% if blog.bookmarked_by?(current_end_user) %>
-  <%= link_to " ", blog_bookmarks_path(blog), method: :delete, remote: true, class: "fas fa-bookmark fa-lg bookmark_blue" %>
+  <%= link_to " ", blog_bookmarks_path(blog), method: :delete, remote: true, class: "fas fa-bookmark fa-lg bookmark_blue",style: "color: #528fff;" %>
 <% else %>
-  <%= link_to " ", blog_bookmarks_path(blog), method: :post, remote: true, class: "far fa-bookmark fa-lg" %>
+  <%= link_to " ", blog_bookmarks_path(blog), method: :post, remote: true, class: "far fa-bookmark fa-lg",style: "color: #528fff;" %>
 <% end %>

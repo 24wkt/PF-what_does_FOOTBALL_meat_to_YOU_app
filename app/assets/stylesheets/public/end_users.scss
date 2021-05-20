@@ -21,10 +21,9 @@ html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
   border: 0;
   font-weight: normal;
   font-size: 100%;
-  vertical-align:baseline;
+  vertical-align: baseline;
   list-style: none;
 }
-/* ↑ブラウザがデフォルトで持っているCSSを打ち消すCSSここまで↑ */
 
 /* ↓タブを横並び↓ */
 .tab-list {
@@ -32,6 +31,7 @@ html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
   justify-content: space-around;
   text-align: center;
 }
+
 /* ↓タブのデザイン↓ */
 .tab {
   width: 100%;
@@ -43,12 +43,14 @@ html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
 .tab:first-child {
   border-left: none;
 }
+
 /* ↓タブがアクティブになっている時のデザイン↓ */
 .tab-active {
   color: #FFF;
   background: gray;
   transition: all 0.2s ease-in-out;
 }
+
 /* ↓タブの中身↓ */
 .tabbox {
   /* ↓タブの中身を最初は非表示↓ */
@@ -56,6 +58,7 @@ html,body,h1,h2,h3,h4,ul,ol,dl,li,dt,dd,p,div,span,img,a,table,tr,th,td {
   /* ↓タブの中身の余白↓ */
   padding: 15px;
 }
+
 /* ↓このクラスがついている時だけタブの中身を表示↓ */
 .box-show {
   display: block;

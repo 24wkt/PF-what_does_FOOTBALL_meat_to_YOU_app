@@ -7,7 +7,7 @@
       </div>
       <h3><%= @blog.title %>&ensp;(<%= @blog.created_at.strftime('%Y/%m/%d') %>)</h3>
       <h4>
-        <%= link_to end_user_path(@blog.end_user) do %>
+        <%= link_to end_user_path(@blog.end_user),data: {"turbolinks"=>false} do %>
           <%= @blog.end_user.name %>
         <% end %>
         <% if current_end_user %>
