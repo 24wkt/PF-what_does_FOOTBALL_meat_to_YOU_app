@@ -10,7 +10,7 @@
         <%= link_to end_user_path(@blog.end_user),data: {"turbolinks"=>false} do %>
           <%= @blog.end_user.name %>
         <% end %>
-        <% if current_end_user %>
+        <% if @blog.end_user == current_end_user %>
           <%= link_to "Edit", edit_blog_path(@blog), class: "btn btn-sm btn-primary ml-3" %>
           <%= link_to "Delete", blog_path(@blog), method: :delete, data: { confirm: '投稿を削除してよろしいでしょうか？'}, class: "btn btn-sm btn-danger" %>
         <% end %>

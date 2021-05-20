@@ -30,13 +30,18 @@ class Public::EndUsersController < ApplicationController
   end
 
   def edit
-    @end_user = current_end_user
-    # サイドバーの関する定義
-    @tags = Tag.all
+    @end_user = EndUser.find(params[:id])
+    if @end_user == current_end_user
+      # サイドバーの関する定義
+      @tags = Tag.all
+      render "edit"
+    else
+      redirect_to end_users_home_path
+    end
   end
 
   def update
-    @end_user = current_end_user
+    @end_user = EndUser.find(params[:id])
     if @end_user.update(end_user_params)
       redirect_to end_user_path(current_end_user)
     else

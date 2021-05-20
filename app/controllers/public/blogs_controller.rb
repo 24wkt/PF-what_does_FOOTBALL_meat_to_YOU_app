@@ -39,6 +39,11 @@ class Public::BlogsController < ApplicationController
 
   def edit
     @blog = Blog.find(params[:id])
+    if @blog.end_user == current_end_user
+      render "edit"
+    else
+      redirect_to end_users_home_path
+    end
     # サイドバーに関する定義
     @end_user = current_end_user
     @tags = Tag.all
