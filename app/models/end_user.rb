@@ -30,6 +30,10 @@ class EndUser < ApplicationRecord
   has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
   has_many :followers, through: :passive_relationships, source: :following
 
+  # バリデーション
+  validates :name, length: {maximum: 20, minmum: 2}, uniqueness: true
+  validates :introduction, length: {maxmum: 200}
+
   # 既にフォローしている人をフォローしないようにするメソッド
   def followed_by?(end_user)
     passive_relationships.find_by(following_id: end_user.id).present?

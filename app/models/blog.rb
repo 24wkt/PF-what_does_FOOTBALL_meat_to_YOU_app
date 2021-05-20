@@ -1,7 +1,7 @@
 class Blog < ApplicationRecord
 
   belongs_to :end_user
-  attachment :blog_image, destroy: false
+  attachment :blog_image, dependent: :destroy
 
   # 投稿へのタグ付け機能に関するリレーション
   has_many :tag_maps, dependent: :destroy
@@ -15,6 +15,10 @@ class Blog < ApplicationRecord
 
   # ブックマークに関するリレーション
   has_many :bookmarks, dependent: :destroy
+
+  #バリデーション
+  validates :title, presence: true
+  validates :body, presence: true
 
   # 既にいいねされているか確認するメソッド
   def liked_by?(end_user)
