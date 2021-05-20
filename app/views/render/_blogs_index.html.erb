@@ -13,8 +13,11 @@
               <h5><%= blog.title %></h5>
             <% end %>
           <% end %>
-          <div class="fas fa-heart heart_red pl-2">
+          <div class="fas fa-heart heart_red pl-2 pr-2">
             <%= blog.likes.count %>
+          </div>
+          <div class="fas fa-bookmark">
+            <%= blog.bookmarks.count %>
           </div>
           <br />
           <%= link_to end_user_path(blog.end_user) do %>
