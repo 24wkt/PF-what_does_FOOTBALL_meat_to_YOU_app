@@ -57,6 +57,14 @@ class Public::BlogsController < ApplicationController
     redirect_to end_user_path(current_end_user)
   end
 
+  def search
+    @tag = Tag.find(params[:tag_id])
+    @blogs = @tag.blogs.all
+    # サイドバーに関する定義
+    @end_user = current_end_user
+    @tags = Tag.all
+  end
+
   private
     def blog_params
       params.require(:blog).permit(:blog_image, :title, :body)

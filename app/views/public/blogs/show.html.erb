@@ -25,7 +25,9 @@
       <div class="text-right mt-4">
         <div class="blog-item mr-2">
           <% @blog_tags.each do |tag| %>
-            <%= tag.tag_name %>
+            <%= link_to tag_search_path(tag) do %>
+              <%= tag.tag_name %>
+            <% end %>
           <% end %>
         </div>
         <div class="blog-item like_<%= @blog.id %> mr-2">

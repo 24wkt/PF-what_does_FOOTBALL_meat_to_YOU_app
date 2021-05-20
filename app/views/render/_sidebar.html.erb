@@ -40,7 +40,9 @@
     <div class="col-sm-12">
       <h5>#Tags</h5>
       <% tags.each do |tag| %>
-        <%= tag.tag_name %>
+        <%= link_to tag_search_path(tag) do %>
+          <%= tag.tag_name %>
+        <% end %>
       <% end %>
     </div>
   </div>

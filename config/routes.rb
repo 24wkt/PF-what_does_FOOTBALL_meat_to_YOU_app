@@ -55,5 +55,9 @@ scope module: :public do
     resource :bookmarks, only: [:create, :destroy]
   end
 
+  # タグ検索に関するルーティング
+  resources :tags do
+    get '/search' => 'blogs#search'
+  end
 end
 end
