@@ -1,11 +1,6 @@
 <!-- エンドユーザー側のマイページ / ユーザー詳細ページ -->
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 text-center">
-      <%= render 'layouts/header' %>
-    </div>
-  </div>
-  <div class="row">
     <div class="col-sm-8">
       <div class="info-item icon-image">
         <%= attachment_image_tag(@end_user, :profile_image, size: '150x150', fallback: "no-image-icon.jpg") %>
@@ -35,12 +30,6 @@
     </div>
     <div class="col-sm-3">
       <%= render 'render/sidebar', end_user: @current_end_user, tags: @tags %>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12 text-center">
-      <%= render 'layouts/footer' %>
     </div>
   </div>
 </div>

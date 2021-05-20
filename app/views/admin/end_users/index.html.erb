@@ -1,9 +1,6 @@
 <!-- 管理者側のエンドユーザー一覧ページ -->
 <div class="container">
   <div class="row">
-    <%= render 'layouts/header' %>
-  </div>
-  <div class="row">
     <h3>List of Enduser</h3>
     <div class="col-sm-12">
       <table class="table table-hover table-bordered">
@@ -18,15 +15,15 @@
         <tbody>
           <% @end_users.each do |end_user| %>
             <tr>
-              <td><%= end_user.id %></td>
-              <td>
+              <td class="align-middle text-center"><%= end_user.id %></td>
+              <td class="align-middle">
                 <%= link_to admin_end_user_path(end_user) do %>
                   <%= attachment_image_tag(end_user, :profile_image, size: '60x60', fallback: "no-image-icon.jpg") %>
                   <%= end_user.name %>
                 <% end %>
               </td>
-              <td><%= end_user.email %></td>
-              <td>
+              <td class="align-middle"><%= end_user.email %></td>
+              <td class="align-middle text-center">
                 <% if end_user.is_deleted == "有効" %>
                   <p class="is_active">有効</p>
                 <% else %>
@@ -38,8 +35,5 @@
         </tbody>
       </table>
     </div>
-  </div>
-  <div class="row">
-    <%= render 'layouts/footer' %>
   </div>
 </div>

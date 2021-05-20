@@ -1,43 +1,54 @@
 <!-- エンドユーザー側の投稿詳細ページ -->
 <div class="container">
   <div class="row">
-    <%= render 'layouts/header' %>
-  </div>
-  <div class="row">
-    <div class="col-sm-8">
-      <%= attachment_image_tag(@blog, :blog_image, :fill, 900, 450) %>
+    <div class="col-sm-12">
+      <div class="text-center mb-4">
+        <%= attachment_image_tag(@blog, :blog_image, :fill, 1200, 600) %>
+      </div>
       <h3><%= @blog.title %>&ensp;(<%= @blog.created_at.strftime('%Y/%m/%d') %>)</h3>
-      <h4><%= @blog.end_user.name %></h4>
-      <% if current_end_user %>
-        <%= link_to "Edit", edit_blog_path(@blog), class: "btn btn-sm btn-primary" %>
-        <%= link_to "Delete", blog_path(@blog), method: :delete, data: { confirm: '投稿を削除してよろしいでしょうか？'}, class: "btn btn-sm btn-danger" %>
-      <% end %>
+      <h4>
+        <%= link_to end_user_path(@blog.end_user) do %>
+          <%= @blog.end_user.name %>
+        <% end %>
+        <% if current_end_user %>
+          <%= link_to "Edit", edit_blog_path(@blog), class: "btn btn-sm btn-primary ml-3" %>
+          <%= link_to "Delete", blog_path(@blog), method: :delete, data: { confirm: '投稿を削除してよろしいでしょうか？'}, class: "btn btn-sm btn-danger" %>
+        <% end %>
+      </h4>
     </div>
   </div>
-  <div class="row">
+
+  <div class="row mt-3">
     <div class="col-sm-8">
       <%= @blog.body %>
       <br />
-      <% @blog_tags.each do |tag| %>
-        <%= tag.tag_name %>
-      <% end %>
+      <div class="text-right mt-4">
+        <div class="blog-item mr-2">
+          <% @blog_tags.each do |tag| %>
+            <%= tag.tag_name %>
+          <% end %>
+        </div>
+        <div class="blog-item like_<%= @blog.id %> mr-2">
+          <%= render 'render/like', blog: @blog %>
+        </div>
+        <div class="blog-item bookmark_<%= @blog.id %>">
+          <%= render 'render/bookmark', blog: @blog %>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 offset-sm-1">
+      <%= render 'render/sidebar', end_user: @end_user, tags: @tags %>
     </div>
   </div>
+
   <div class="row">
-    <div class="col-sm-1 like_<%= @blog.id %>">
-      <%= render 'render/like', blog: @blog %>
-    </div>
-    <div class="col-sm-4 bookmark_<%= @blog.id %>">
-      <%= render 'render/bookmark', blog: @blog %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-8 comment_counts">
+    <div class="col-sm-12 comment_counts">
       <h5>Comments(<%= @blog.comments.count %>)</h5>
     </div>
   </div>
+
   <div class="row">
-    <div class="col-sm-8 comment_index">
+    <div class="col-sm-12 comment_index">
       <%= render 'render/comment', blog: @blog %>
     </div>
   </div>
@@ -48,8 +59,5 @@
         <%= f.submit "Send", class: "btn btn-sm btn-success" %>
       <% end %>
     </div>
-  </div>
-  <div class="row">
-    <%= render 'layouts/footer' %>
   </div>
 </div>

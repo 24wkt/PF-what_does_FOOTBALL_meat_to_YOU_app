@@ -1,23 +1,16 @@
 <div class="container">
-  <div class="row">
-    <%= render 'layouts/header' %>
-  </div>
-  <div class="row">
-    <div class="col-sm-12 text-center">
-      <h2>本当に退会します？</h2>
+  <div class="row mt-5">
+    <div class="col-sm-8 text-center">
+      <h2 class="mt-5 mb-3"><strong>本当に退会します？</strong></h2>
       <h3>
         退会すると、会員登録情報やこれまでの投稿が閲覧できなくなります。<br />
         退会する場合は「withdraw」をクリックしてください。
       </h3>
+      <%= link_to "Cancel", end_user_path(current_end_user), class: "btn btn-lg btn-primary mt-5" %>
+      <%= link_to "withdraw", withdraw_end_users_path, method: :patch, data: { confirm: 'OKを押すと退会処理が実行されます。本当によろしいですか？'}, class: "btn btn-lg btn-danger mt-5" %>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-12 text-center">
-      <%= link_to "Cancel", end_user_path(current_end_user), class: "btn btn-lg btn-primary" %>
-      <%= link_to "withdraw", withdraw_end_users_path, method: :patch, data: { confirm: 'OKを押すと退会処理が実行されます。本当によろしいですか？'}, class: "btn btn-lg btn-danger" %>
+    <div class="col-sm-3 offset-sm-1">
+      <%= render 'render/sidebar', end_user: @end_user, tags: @tags %>
     </div>
-  </div>
-  <div class="row">
-    <%= render 'layouts/footer' %>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>What does football meatings to you?</title>
+    <title>What is FOOTBALL to YOU?</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,20 @@
   </head>
 
   <body>
+
+    <% if admin_signed_in? %>
+      <%= render 'layouts/header' %>
+    <% elsif end_user_signed_in?%>
+      <%= render 'layouts/header' %>
+    <% end %>
+
     <%= yield %>
+
+    <% if admin_signed_in? %>
+      <%= render 'layouts/footer' %>
+    <% elsif end_user_signed_in? %>
+      <%= render 'layouts/footer' %>
+    <% end %>
+
   </body>
 </html>

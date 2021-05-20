@@ -1,27 +1,29 @@
 <!-- 管理者側のエンドユーザー詳細ページ -->
 <div class="container">
   <div class="row">
-    <%= render 'layouts/header' %>
-  </div>
-  <div class="row">
     <div class="col-sm-4">
-      <%= attachment_image_tag(@end_user, :profile_image, size: '60x60', fallback: "no-image-icon.jpg") %>
+      <%= attachment_image_tag(@end_user, :profile_image, size: '150x150', fallback: "no-image-icon.jpg") %>
     </div>
     <div class="col-sm-8">
-      <h3><%= @end_user.name %></h3><br />
-      <% if @end_user.is_deleted == "false" %>
-        <h5>User Status: 有効</h5>
+      <h3><strong><%= @end_user.name %></strong></h3><br />
+      <h5 class="end_user-item">メールアドレス: </h5>
+      <h5 class="end_user-item"><%= @end_user.email %></h5><br />
+      <% if @end_user.is_deleted == "有効" %>
+        <h5 class="status-item">User Status: </h5>
+        <h5 class="status-item is_active">有効</h5>
       <% else %>
-        <h5>User Status: 無効</h5>
+        <h5 class="status-item">User Status: </h5>
+        <h5 class="status-item is_deleted">退会済</h5>
       <% end %>
     </div>
   </div>
-  <div class="row">
+  <div class="row mt-5">
     <div class="col-sm-12">
-      <%= @end_user.introduction %>
+      <h4>FOOTBALL for Me</h4>
+      <h5><%= @end_user.introduction %></h5>
     </div>
   </div>
-  <div class="row">
+  <div class="row mt-5">
     <div class="col-sm-12">
       <h4>List of User's Blogs</h4>
       <table class="table table-hover table-bordered">
@@ -35,16 +37,16 @@
         <tbody>
           <% @end_user.blogs.each do|blog| %>
             <tr>
-              <td><%= blog.created_at.strftime('%Y/%m/%d') %></td>
-              <td><%= blog.title %></td>
-              <td><%= link_to "show", admin_blog_path(blog) %></td>
+              <td class="align-middle text-center"><%= blog.created_at.strftime('%Y/%m/%d') %></td>
+              <td>
+                <%= attachment_image_tag(blog, :blog_image, size: "200x120", fallback: "no-image-mini.jpg") %>
+                <%= blog.title %>
+                </td>
+              <td class="align-middle text-center"><%= link_to "show", admin_blog_path(blog) %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
     </div>
-  </div>
-  <div class="row">
-    <%= render 'layouts/footer' %>
   </div>
 </div>

@@ -10,6 +10,9 @@ class Public::HomesController < ApplicationController
   end
 
   def about
+    # サイドバーに関する記述
+    @end_user = current_end_user
+    @tags = Tag.all
   end
 
 end

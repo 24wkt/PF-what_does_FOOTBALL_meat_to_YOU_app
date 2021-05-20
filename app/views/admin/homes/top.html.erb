@@ -1,27 +1,27 @@
 <!-- 管理者側のトップページ -->
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12 text-center">
-      <%= render 'layouts/header' %>
+  <div class="row mt-5">
+    <div class="col-sm-12">
+      <div class="public-image">
+        <h1 class="home-title">What is FOOTABLL to YOU?</h1>
+        <h3 class="admin-title">~ admins home ~</h3>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-5 mb-5">
+    <div class="col-sm-6 text-center mb-5">
+      <h2 class="mb-3">Users Management Page</h2>
+      <%= link_to "Show", admin_end_users_path, class: "btn btn-lg btn-success" %>
+    </div>
+    <div class="col-sm-6 text-center mb-5">
+      <h2 class="mb-3">Blogs Management Page</h2>
+      <%= link_to "Show", admin_blogs_path, class: "btn btn-lg btn-success" %>
     </div>
   </div>
   <div class="row mt-5">
-    <div class="col-sm-4 text-center">
-      <h5 class="mb-3">Users Management Page</h5>
-      <%= link_to "Show", admin_end_users_path, class: "btn btn-lg btn-success" %>
-    </div>
-    <div class="col-sm-4 text-center">
-      <h5 class="mb-3">Blogs Management Page</h5>
-      <%= link_to "Show", admin_blogs_path, class: "btn btn-lg btn-success" %>
-    </div>
-    <div class="col-sm-4 text-center">
-      <h5>Search</h5>
-      <%= render 'render/search_form' %>
-    </div>
-  </div>
-  <div class="row">
     <div class="col-sm-12 text-center">
-      <%= render 'layouts/footer' %>
+      <h2>Search</h2>
+      <%= render 'render/search_form' %>
     </div>
   </div>
 </div>

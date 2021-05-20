@@ -1,11 +1,8 @@
 <!-- エンドユーザー側のフォロワー一覧 -->
 <div class="container">
   <div class="row">
-    <%= render 'layouts/header' %>
-  </div>
-  <div class="row">
+    <div class="col-sm-8">
     <h3>Followers Users</h3>
-    <div class="col-sm-12">
       <table class="table table-hover table-bordered">
         <% if @end_users.exists? %>
           <thead>
@@ -18,19 +15,19 @@
           <tbody>
             <% @end_users.each do |end_user| %>
               <tr>
-                <td><%= attachment_image_tag(end_user, :profile_image, size: '60x60', fallback: "no-image-icon.jpg") %></td>
-                <td><%= link_to end_user.name, end_user_path(end_user) %></td>
-                <td><%= end_user.introduction %></td>
+                <td class="align-middle text-center"><%= attachment_image_tag(end_user, :profile_image, size: '60x60', fallback: "no-image-icon.jpg") %></td>
+                <td class="align-middle"><%= link_to end_user.name, end_user_path(end_user) %></td>
+                <td class="align-middle"><%= end_user.introduction %></td>
               </tr>
             <% end %>
-        <% else %>
-          <P>There are no users.</P>
-        <% end %>
           </tbody>
+        <% else %>
+          <h5 class="text-center mt-5">There are no users.</P>
+        <% end %>
       </table>
     </div>
-  </div>
-  <div class="row">
-    <%= render 'layouts/footer' %>
+    <div class="col-sm-3">
+      <%= render 'render/sidebar', end_user: @current_end_user, tags: @tags %>
+    </div>
   </div>
 </div>

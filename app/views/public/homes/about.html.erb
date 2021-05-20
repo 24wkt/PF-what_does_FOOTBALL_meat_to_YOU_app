@@ -1,12 +1,42 @@
 <!-- エンドユーザー側のトップページ -->
 <div class="container">
-  <div class="row">
-    <%= render 'layouts/header' %>
+  <div class="row mt-5">
+    <div class="col-sm-12">
+      <div class="public-image">
+        <h1 class="home-title">What is FOOTABLL to YOU?</h1>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <h3>Abouts</h3>
-  </div>
-  <div class="row">
-    <%= render 'layouts/footer' %>
+  <div class="row mt-5">
+    <div class="col-sm-8">
+      <h2>Abouts</h2>
+        <p>
+          <strong>Jリーグ発足以降、急激に進化を続ける日本サッカー。</strong><br />
+          ITの進化に伴ったグローバル化で欧州の知見が輸入され、テクニックや戦術が進化していったことは言うまでもない。<br />
+          競技レベルの向上は観る人を熱狂させ、感動を味合わせてくれる。<br />
+          しかし、観る人のサッカー観は醸成されているのだろうか？
+        </p>
+        <p>
+          あなたにとってのサッカーを見つけるために<br />
+          <strong>ユーザーの数だけある価値観に触れて、サッカーとは何かを追求しよう。</strong><br />
+          サッカーをこよなく愛する人たちの想いや考えがサッカーをさらに面白く、魅力的なものにしてくれることでしょう。<br />
+          さあ、あなたにとってのサッカーを見つけに行きましょう。
+        </p>
+      <h2>Objectives</h2>
+        <p>
+          <strong>「What is FOOTABLL to YOU?（あなたにとってサッカーとは何にか？）」</strong><br />
+          さぞ、壮大なテーマを掲げているようだが、どんな些細なことでもいいと私たちは考えています。<br />
+          人の数だけサッカーの楽しみ方はあります。<br />
+          「戦術、スキル、テクニック、移籍、ユニフォームがイケてる、選手たちのプレーを写真に収める…」<br />
+        </p>
+        <p>
+          ここでは「良いか？悪いか？」、「正解か？間違いか？」といった是非を問うのではなく、<br />
+          <strong>多様な意見や考え、楽しみ方と触れ合い、新しい発見のために活用していただだくことを強く願います。</strong>
+        </p>
+
+    </div>
+    <div class="col-sm-3 offset-sm-1">
+      <%= render 'render/sidebar', end_user: @end_user, tags: @tags %>
+    </div>
   </div>
 </div>

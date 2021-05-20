@@ -1,14 +1,11 @@
 <div class="container">
-  <div class="row">
-    <%= render 'layouts/header' %>
-  </div>
-  <div class="row">
+  <div class="row mt-5">
     <div class="col-sm-8">
       <h3>List of Blogs</h3>
         <%= render 'render/blogs_index', blogs: @blogs %>
     </div>
-  </div>
-  <div class="row">
-    <%= render 'layouts/footer' %>
+    <div class="col-sm-3">
+      <%= render 'render/sidebar', end_user: @end_user, tags: @tags %>
+    </div>
   </div>
 </div>

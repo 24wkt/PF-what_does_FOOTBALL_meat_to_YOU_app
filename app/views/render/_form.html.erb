@@ -1,24 +1,30 @@
-<div class="col-lg-12">
+
   <%= form_with model: blog, local: true do |f| %>
     <div class="form-group">
-      <%= f.label :blog_image %>
+      <%= f.label :blog_image, class: "mr-5" %>
       <%= f.attachment_field :blog_image %>
     </div>
     <div class="form-group">
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+      <%= f.label :title, class: "mr-5" %>
+      <%= f.text_field :title, size: "30x10", class: "ml-5" %>
     </div>
     <div class="form-group">
-      <%= f.label :body %>
-      <%= f.text_area :body %>
+      <%= f.label :body, class: "mr-5" %>
+      <%= f.text_area :body, size: "30x10", class: "ml-5" %>
     </div>
     <div class"from-group">
-      <%= f.label :tags %>
-      ※半角スペースで区切ると複数のタグを設定できます。
-      <%= f.text_field :tag_name %>
+      <%= f.label :tags, class: "mr-5" %>
+      <%= f.text_field :tag_name, size: "30x10", class: "ml-5" %>
+      <p>※半角スペースで区切ると複数のタグを設定できます。</p>
     </div>
-    <div class="form-group">
-      <%= f.submit "Create!!", class: "btn btn-sm btn-success" %>
-      </div>
+    <div class="form-group text-center">
+      <%= f.submit "Create!!", class: "btn btn-lg btn-success" %>
+    </div>
   <% end %>
-</div>
+  <div class="back text-center">
+    <% if current_page?(new_blog_path) %>
+      <%= link_to "Back", end_user_path(current_end_user) %>
+    <% elsif current_page?(edit_blog_path) %>
+      <%= link_to "Back", blog_path(blog) %>
+    <% end %>
+  </div>

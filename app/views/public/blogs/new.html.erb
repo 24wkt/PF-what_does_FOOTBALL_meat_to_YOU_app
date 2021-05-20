@@ -1,13 +1,12 @@
 <!-- エンドユーザー側の新規投稿画面 -->
 <div class="container">
-  <div class="row">
-    <%= render 'layouts/header' %>
-  </div>
-  <div class="row">
-    <h3>Create New Blog</h3>
-    <%= render 'render/form', blog: @blog %>
-  </div>
-  <div class="row">
-    <%= render 'layouts/footer' %>
+  <div class="row mt-5 mb-5">
+    <div class="col-sm-8 offset-sm-1">
+      <h3 class="mb-5">Create New Blog</h3>
+      <%= render 'render/form', blog: @blog %>
+    </div>
+    <div class="col-sm-3 mt-5">
+      <%= render 'render/sidebar', end_user: @end_user, tags: @tags %>
+    </div>
   </div>
 </div>

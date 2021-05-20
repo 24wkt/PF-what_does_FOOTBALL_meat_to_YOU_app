@@ -2,6 +2,9 @@ class Public::BlogsController < ApplicationController
 
   def new
     @blog = Blog.new
+    # サイドバーに関する定義
+    @end_user = current_end_user
+    @tags = Tag.all
   end
 
   def create
@@ -18,16 +21,25 @@ class Public::BlogsController < ApplicationController
 
   def index
     @blogs = Blog.all
+    # サイドバーに関する定義
+    @end_user = current_end_user
+    @tags = Tag.all
   end
 
   def show
     @blog = Blog.find(params[:id])
     @blog_tags = @blog.tags
     @comment = Comment.new
+    # サイドバーに関する定義
+    @end_user = current_end_user
+    @tags = Tag.all
   end
 
   def edit
     @blog = Blog.find(params[:id])
+    # サイドバーに関する定義
+    @end_user = current_end_user
+    @tags = Tag.all
   end
 
   def update

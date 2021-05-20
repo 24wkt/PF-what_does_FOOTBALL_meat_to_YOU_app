@@ -6,9 +6,7 @@ class Public::EndUsersController < ApplicationController
 
   def show
     @end_user = EndUser.find(params[:id])
-    #@likes = Like.where(end_user_id: @end_user.id)
-    #@bookmarks = @end_user.bookmarks
-    # サイドバーに関する記述
+    # サイドバーに関する定義
     @current_end_user = current_end_user
     @tags = Tag.all
   end
@@ -16,15 +14,23 @@ class Public::EndUsersController < ApplicationController
   def follows
     end_user = EndUser.find(params[:id])
     @end_users = end_user.followings
+    # サイドバーに関する定義
+    @current_end_user = current_end_user
+    @tags = Tag.all
   end
 
   def followers
     end_user = EndUser.find(params[:id])
     @end_users = end_user.followers
+    # サイドバーに関する定義
+    @current_end_user = current_end_user
+    @tags = Tag.all
   end
 
   def edit
     @end_user = current_end_user
+    # サイドバーの関する定義
+    @tags = Tag.all
   end
 
   def update
@@ -38,6 +44,9 @@ class Public::EndUsersController < ApplicationController
 
   # 退会確認画面
   def unsubscribe
+    # サイドバーに関する定義
+    @end_user = current_end_user
+    @tags = Tag.all
   end
 
   # 退会処理

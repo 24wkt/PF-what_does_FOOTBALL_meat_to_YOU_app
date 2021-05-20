@@ -1,26 +1,39 @@
 <!-- 管理者側の投稿詳細ページ -->
 <div class="container">
   <div class="row">
-    <%= render 'layouts/header' %>
-  </div>
-  <div class="row">
     <div class="col-sm-12">
-      <%= attachment_image_tag(@blog, :blog_image, :fill, 900, 450) %>
+      <div class="text-center mb-4">
+        <%= attachment_image_tag(@blog, :blog_image, :fill, 1200, 600) %>
+      </div>
       <h3><%= @blog.title %>&ensp;(<%= @blog.created_at.strftime('%Y/%m/%d') %>)</h3>
-      <h4><%= @blog.end_user.name %></h4>
+      <h4>
+        <%= link_to admin_end_user_path(@blog.end_user) do %>
+          <%= @blog.end_user.name %>
+        <% end %>
         <%= link_to "Delete", admin_blog_path(@blog), method: :delete, data: { confirm: '投稿を削除してよろしいでしょうか？'}, class: "btn btn-sm btn-danger" %>
+      </h4>
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
       <%= @blog.body %>
+      <br />
+      <div class="text-right mt-4">
+        <div class="blog-item mr-2">
+          <% @blog.tags.each do |tag| %>
+            <%= tag.tag_name %>
+          <% end %>
+        </div>
+        <div class="blog-item fas fa-heart heart_red mr-2">
+          <%= @blog.likes.count %>
+        </div>
+        <div class="blog-item fas fa-bookmark bookmark_blue">
+          <%= @blog.bookmarks.count %>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-12 fas fa-heart heart_red">
-      <%= @blog.likes.count %>
-    </div>
-  </div>
+
   <div class="row">
     <div class="col-sm-12 comment_counts">
       <h5>Comments(<%= @blog.comments.count %>)</h5>
@@ -30,8 +43,5 @@
     <div class="col-sm-12 comment_index">
       <%= render 'render/comment', blog: @blog %>
     </div>
-  </div>
-  <div class="row">
-    <%= render 'layouts/footer' %>
   </div>
 </div>
