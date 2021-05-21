@@ -31,8 +31,8 @@ class EndUser < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :following
 
   # バリデーション
-  validates :name, length: {maximum: 20, minmum: 2}, uniqueness: true
-  validates :introduction, length: {maxmum: 200}
+  validates :name, length: {maximum: 20, minimum: 2}, uniqueness: true
+  validates :introduction, length: {maximum: 200}
 
   # 既にフォローしている人をフォローしないようにするメソッド
   def followed_by?(end_user)

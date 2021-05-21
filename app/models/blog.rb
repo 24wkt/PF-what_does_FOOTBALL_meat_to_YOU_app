@@ -1,7 +1,7 @@
 class Blog < ApplicationRecord
 
   belongs_to :end_user
-  attachment :blog_image, dependent: :destroy
+  attachment :blog_image, destroy: false
 
   # 投稿へのタグ付け機能に関するリレーション
   has_many :tag_maps, dependent: :destroy

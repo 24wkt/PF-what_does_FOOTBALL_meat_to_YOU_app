@@ -15,11 +15,16 @@
     </div>
 
     <%= form_with model: @end_user, url:end_user_session_path, local:true do |f| %>
-      <%= render "public/shared/error_messages", resource: @end_user %>
+      <% if @end_user.errors.any? %>
+      <% end %>
+
 
     <div class="row field">
       <div class="col-sm-6 field text-center">
         <%= f.label :email, class: "form-item" %>
+        <% if @end_user.errors.include?(:email) %>
+          <P class="errors"><%= @end_user.errors.full_messages_for(:email).first %></P>
+        <% end %>
       </div>
       <div class="col-sm-6 field text-center">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mb-3" %>
@@ -29,6 +34,9 @@
     <div class="row field">
       <div class="col-sm-6 field text-center">
         <%= f.label :password, class: "form-item" %>
+        <% if @end_user.errors.include?(:password) %>
+          <P class="errors"><%= @end_user.errors.full_messages_for(:password).first %></P>
+        <% end %>
       </div>
       <div class="col-sm-6 field text-center">
         <%= f.password_field :password, autocomplete: "current-password", class: "mb-3" %>
