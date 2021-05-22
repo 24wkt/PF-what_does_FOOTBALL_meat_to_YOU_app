@@ -32,6 +32,7 @@ class EndUser < ApplicationRecord
 
   # バリデーション
   validates :name, length: {maximum: 20, minimum: 2}, uniqueness: true
+  validates :email, presence: true
   validates :introduction, length: {maximum: 200}
 
   # 既にフォローしている人をフォローしないようにするメソッド

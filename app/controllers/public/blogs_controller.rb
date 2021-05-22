@@ -58,6 +58,9 @@ class Public::BlogsController < ApplicationController
       flash[:notice] = "投稿の更新に成功しました！"
       redirect_to blog_path(@blog)
     else
+      # サイドバーに関する定義
+      @end_user = current_end_user
+      @tags = Tag.all
       render :edit
     end
   end

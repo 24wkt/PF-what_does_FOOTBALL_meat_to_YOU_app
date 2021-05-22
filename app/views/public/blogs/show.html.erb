@@ -55,7 +55,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-">
       <%= form_with(model:[@blog, @comment], remote: true) do |f| %>
         <%= f.text_area :comment, size:"75x3" %><br />
         <%= f.submit "Send", class: "btn btn-sm btn-success" %>

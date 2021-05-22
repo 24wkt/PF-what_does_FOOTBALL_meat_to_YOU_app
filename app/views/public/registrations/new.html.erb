@@ -8,20 +8,16 @@
 
     <div class="row">
       <div class="col-sm-12 text-center">
-        <h1 class="pege-heading">User Signup</h1>
+        <h1 class="pege-heading">User SignUp</h1>
       </div>
     </div>
 
-    <%= form_with model: @end_user, url:end_user_registration_path, local: true do |f| %>
-      <% if @end_user.errors.any? %>
-      <% end %>
+    <%= form_with model: @end_user, url: end_user_registration_path, local: true do |f| %>
+      <%= render "public/shared/error_messages", resource: resource %>
 
       <div class="row field">
         <div class="col-sm-6 field text-center">
-          <%= f.label :user_name, class: "form-item" %>
-          <% if @end_user.errors.include?(:name) %>
-            <P class="errors"><%= @end_user.errors.full_messages_for(:name).first %></P>
-          <% end %>
+          <%= f.label :name, class: "form-item" %>
         </div>
         <div class="col-sm-6 field text-center">
           <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "mb-3" %>
@@ -31,9 +27,6 @@
       <div class="row field">
         <div class="col-sm-6 text-center">
           <%= f.label :email, class: "form-item" %>
-          <% if @end_user.errors.include?(:email) %>
-            <P class="errors"><%= @end_user.errors.full_messages_for(:email).first %></P>
-          <% end %>
         </div>
         <div class="col-sm-6 text-center">
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "mb-3"  %>
@@ -46,9 +39,6 @@
             <% if @minimum_password_length %>
               <em class="form-item mr-5">(<%= @minimum_password_length %>文字以上)</em>
             <% end %>
-          <% if @end_user.errors.include?(:password) %>
-            <P class="errors"><%= @end_user.errors.full_messages_for(:password).first %></P>
-          <% end %>
         </div>
         <div class="col-sm-6 text-center">
           <%= f.password_field :password, autocomplete: "new-password", class: "mb-3"  %>
@@ -58,9 +48,6 @@
       <div class="row field">
         <div class="col-sm-6 text-center">
           <%= f.label :"password(確認用)", class: "form-item" %>
-          <% if @end_user.errors.include?(:password_confirmation) %>
-            <P class="errors"><%= @end_user.errors.full_messages_for(:password_confirmation).first %></P>
-          <% end %>
         </div>
         <div class="col-sm-6 text-center">
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "mb-2"  %>

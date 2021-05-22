@@ -42,10 +42,15 @@
   color: #528fff;
 }
 
-.errors {
+#error_explanation {
   color: red;
+  text-align: center;
 }
 
-#notice {
+.notice {
   color: green;
+}
+
+#danger, .alert {
+  color: red;
 }

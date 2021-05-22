@@ -13,13 +13,14 @@
 
     <% if admin_signed_in? %>
       <%= render 'layouts/header' %>
+      <div class="notice ml-5 mb-5"><%= notice %></div>
     <% elsif end_user_signed_in?%>
       <%= render 'layouts/header' %>
+      <div class="notice ml-5 mb-5"><%= notice %></div>
     <% end %>
 
-    <main>
-      <p id="notice"><%= notice %></p>
-    </main>
+
+
     <%= yield %>
 
     <% if admin_signed_in? %>
