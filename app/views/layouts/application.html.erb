@@ -17,6 +17,9 @@
       <%= render 'layouts/header' %>
     <% end %>
 
+    <main>
+      <p id="notice"><%= notice %></p>
+    </main>
     <%= yield %>
 
     <% if admin_signed_in? %>

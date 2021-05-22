@@ -15,6 +15,7 @@ class Public::BlogsController < ApplicationController
     tag_list = params[:blog][:tag_name].split(nil)
     if @blog.save
       @blog.save_tag(tag_list)
+      flash[:notice] = "新規投稿に成功しました！"
       redirect_to blog_path(@blog)
     else
       @end_user = current_end_user
@@ -45,7 +46,7 @@ class Public::BlogsController < ApplicationController
       # サイドバーに関する定義
       @end_user = current_end_user
       @tags = Tag.all
-      render "edit"
+      render :edit
     else
       redirect_to end_users_home_path
     end
@@ -54,6 +55,7 @@ class Public::BlogsController < ApplicationController
   def update
     @blog = Blog.find(params[:id])
     if @blog.update(blog_params)
+      flash[:notice] = "投稿の更新に成功しました！"
       redirect_to blog_path(@blog)
     else
       render :edit
@@ -63,6 +65,7 @@ class Public::BlogsController < ApplicationController
   def destroy
     @blog = Blog.find(params[:id])
     @blog.destroy
+    flash[:notice] = "投稿の削除に成功しました！"
     redirect_to end_user_path(current_end_user)
   end
 

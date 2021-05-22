@@ -82,6 +82,9 @@ gem 'kaminari','~> 1.2.1'
 # デバックツール
 gem 'pry-byebug', group: :development
 
+# エラーメッセージの日本語化
+gem 'rails-i18n'
+
 # 環境変数化とデータベース
 gem 'dotenv-rails'
 group :production do

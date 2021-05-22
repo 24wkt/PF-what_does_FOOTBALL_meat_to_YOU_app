@@ -43,12 +43,13 @@ class Public::EndUsersController < ApplicationController
   def update
     @end_user = EndUser.find(params[:id])
     if @end_user.update(end_user_params)
+      flash[:notice] = "ユーザー情報の更新に成功しました！"
       redirect_to end_user_path(current_end_user)
     else
       # サイドバーに関する定義
       @end_user = current_end_user
       @tags = Tag.all
-      render :edit
+      render "edit"
     end
   end
 
@@ -64,6 +65,7 @@ class Public::EndUsersController < ApplicationController
     @end_user = current_end_user
     @end_user.update(is_deleted: true)
     reset_session
+    flash[:notice] = "退会に成功しました！"
     redirect_to root_path
   end
 
