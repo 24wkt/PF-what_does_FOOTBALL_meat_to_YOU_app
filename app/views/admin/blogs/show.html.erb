@@ -10,7 +10,6 @@
         <%= link_to admin_end_user_path(@blog.end_user) do %>
           <%= @blog.end_user.name %>
         <% end %>
-        <%= link_to "Delete", admin_blog_path(@blog), method: :delete, data: { confirm: '投稿を削除してよろしいでしょうか？'}, class: "btn btn-sm btn-danger" %>
       </h4>
     </div>
   </div>

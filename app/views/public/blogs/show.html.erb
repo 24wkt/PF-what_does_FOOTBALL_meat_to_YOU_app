@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="text-center mb-4">
-        <%= attachment_image_tag(@blog, :blog_image, :fill, 1200, 600) %>
+        <%= attachment_image_tag(@blog, :blog_image, :fill, 1200, 600, fallback: "linkedin_banner_image_1.png", size: "1200x600" ) %>
       </div>
       <h3><%= @blog.title %>&ensp;(<%= @blog.created_at.strftime('%Y/%m/%d') %>)</h3>
       <h4>

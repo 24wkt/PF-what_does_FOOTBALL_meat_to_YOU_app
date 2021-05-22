@@ -1,8 +1,8 @@
 <header>
-  <nav class="navbar navbar-expand-xl navbar-light bg-white mb-5">
+  <nav class="navbar navbar-expand-xl navbar-light bg-secondary mb-5">
     <div class="col-xl-4">
       <div class="logo">
-        <a href="/">What is FOOTBALL to YOU?</a>
+        <a href="admin_top_path"><%= image_tag "linkedin_banner_image_1.png", class: "logo-size" %></a>
       </div>
     </div>
     <div class="col-xl-8">
@@ -13,17 +13,17 @@
         <ul class="navbar-nav ml-auto">
         <!--管理者としてログインした場合のヘッダー-->
         <% if admin_signed_in? %>
-          <li><%= link_to "HOME", admin_top_path, class: "btn btn-outline-secondary mx-3 my-1" %></li>
-          <li><%= link_to "USERS", admin_end_users_path, class: "btn btn-outline-secondary mx-3 my-1" %></li>
-          <li><%= link_to "BLOGS", admin_blogs_path, class: "btn btn-outline-secondary mx-3 my-1" %></li>
-          <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, class: "btn btn-outline-secondary mx-3 my-1" %></li>
+          <li><%= link_to "HOME", admin_top_path, class: "btn btn-outline-light mx-3 my-1" %></li>
+          <li><%= link_to "USERS", admin_end_users_path, class: "btn btn-outline-light mx-3 my-1" %></li>
+          <li><%= link_to "BLOGS", admin_blogs_path, class: "btn btn-outline-light mx-3 my-1" %></li>
+          <li><%= link_to "LOGOUT", destroy_admin_session_path, method: :delete, class: "btn btn-outline-light mx-3 my-1" %></li>
         <!--会員としてログインした場合のヘッダー-->
         <% else end_user_signed_in? %>
-          <li><%= link_to "HOME", end_users_home_path, class: "btn btn-outline-secondary mx-3 my-1" %></li>
-          <li><%= link_to "ABOUT", end_users_about_path, class: "btn btn-outline-secondary mx-3 my-1" %></li>
-          <li><%= link_to "BLOG", blogs_path, class: "btn btn-outline-secondary mx-3 my-1" %></li>
-          <li><%= link_to "MYPEGE", end_user_path(current_end_user), class: "btn btn-outline-secondary mx-3 my-1",data: {"turbolinks"=>false} %></li>
-          <li><%= link_to "LOGOUT", destroy_end_user_session_path, method: :delete, class: "btn btn-outline-secondary mx-3 my-1" %></li>
+          <li><%= link_to "HOME", end_users_home_path, class: "btn btn-outline-light mx-3 my-1" %></li>
+          <li><%= link_to "ABOUT", end_users_about_path, class: "btn btn-outline-light mx-3 my-1" %></li>
+          <li><%= link_to "BLOG", blogs_path, class: "btn btn-outline-light mx-3 my-1" %></li>
+          <li><%= link_to "MYPEGE", end_user_path(current_end_user), class: "btn btn-outline-light mx-3 my-1",data: {"turbolinks"=>false} %></li>
+          <li><%= link_to "LOGOUT", destroy_end_user_session_path, method: :delete, class: "btn btn-outline-light mx-3 my-1" %></li>
         <% end %>
         </ul>
       </div>
