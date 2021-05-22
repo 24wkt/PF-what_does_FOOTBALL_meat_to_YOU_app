@@ -1,31 +1,29 @@
 <!-- エンドユーザーの編集画面-->
 <div class="container">
-  <div class="row">
-    <div class="col-sm-6 offset-sm-1">
+  <div class="row mb-5">
+    <div class="col-sm-12">
       <h3>User Edit</h3>
+      <%= render 'render/error', obj: @end_user %>
+    </div>
+  </div>
+  <div class="row mb-5">
+    <div class="col-sm-8 offset-sm-1">
       <%= form_with model: @end_user, local: true do |f| %>
-        <% if @end_user.errors.any? %>
-        <% end %>
         <div class="form-group">
           <%= f.label :image, class: "mr-5" %>
           <%= f.attachment_field :profile_image, class: "ml-5" %>
         </div>
         <div class="form-group">
           <%= f.label :name, class: "mr-5" %>
-          <% if @end_user.errors.include?(:name) %>
-            <P class="errors"><%= @end_user.errors.full_messages_for(:name).first %></P>
-          <% end %>
+          &ensp;
           <%= f.text_field :name, class: "ml-5" %>
         </div>
         <div class="form-group">
           <%= f.label :introduction, class: "mr-5" %>
-          <% if @end_user.errors.include?(:introduction) %>
-            <P class="errors"><%= @end_user.errors.full_messages_for(:introduction).first %></P>
-          <% end %>
-          <%= f.text_area :introduction, size: "35x5" %>
+          <%= f.text_area :introduction, size: "35x5", class: "ml-4" %>
         </div>
         <div class="form-group text-center">
-          <%= f.submit "Updaate!!", class: "btn btn-lg btn-success" %>
+          <%= f.submit "Update!!", class: "btn btn-lg btn-success" %>
         </div>
       <% end %>
       <div class="back text-center">
@@ -33,7 +31,7 @@
       </div>
     </div>
     <div class="col-sm-3">
-      <%= render 'render/sidebar', end_user: @end_user, tags: @tags %>
+      <%= render 'render/sidebar', end_user: current_end_user, tags: @tags %>
     </div>
   </div>
 </div>

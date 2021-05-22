@@ -17,7 +17,16 @@ ja:
               too_long: "は%{count}文字以下に設定して下さい。"
               invalid: "は有効でありません。"
               confirmation: "が内容とあっていません。"
+
+    models:
+      end_user: "ユーザー"
+
     attributes:
+      blog:
+        title: "タイトル"
+        body: "本文"
+        blog_image: "投稿イメージ"
+        tags: "タグ"
       end_user:
         current_password: "現在のパスワード"
         name: "ユーザーネーム"
@@ -25,8 +34,9 @@ ja:
         password: "パスワード"
         password_confirmation: "確認用パスワード"
         remember_me: "次回から自動的にログイン"
-    models:
-      end_user: "ユーザー"
+        name: "ユーザーネーム"
+        image: "アイコンイメージ"
+        introduction: "イントロダクション"
   devise:
     confirmations:
       confirmed: 'アカウントを登録しました。'

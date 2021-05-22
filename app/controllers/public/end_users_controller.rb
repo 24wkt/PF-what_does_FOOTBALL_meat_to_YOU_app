@@ -47,7 +47,6 @@ class Public::EndUsersController < ApplicationController
       redirect_to end_user_path(current_end_user)
     else
       # サイドバーに関する定義
-      @end_user = current_end_user
       @tags = Tag.all
       render "edit"
     end

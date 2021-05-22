@@ -43,19 +43,19 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mr-5">
     <div class="col-sm-12 comment_counts">
       <h5>Comments(<%= @blog.comments.count %>)</h5>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row mb-4 mt-5">
     <div class="col-sm-12 comment_index">
       <%= render 'render/comment', blog: @blog %>
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-">
+    <div class="col-sm-12">
       <%= form_with(model:[@blog, @comment], remote: true) do |f| %>
         <%= f.text_area :comment, size:"75x3" %><br />
         <%= f.submit "Send", class: "btn btn-sm btn-success" %>

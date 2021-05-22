@@ -1,24 +1,17 @@
 
   <%= form_with model: blog, local: true do |f| %>
-    <% if @blog.errors.any? %>
-    <% end %>
 
     <div class="form-group">
-      <%= f.label :blog_image, class: "mr-5" %>
+      <%= f.label :blog_image, class: "mr-4" %>
+      &ensp;
       <%= f.attachment_field :blog_image %>
     </div>
     <div class="form-group">
       <%= f.label :title, class: "mr-5" %>
-      <% if @blog.errors.include?(:title) %>
-        <P class="errors ml-5"><%= @blog.errors.full_messages_for(:title).first %></P>
-      <% end %>
-      <%= f.text_field :title, size: "30x10", class: "ml-5" %>
+      <%= f.text_field :title, size: "30x10", class: "ml-3" %>
     </div>
     <div class="form-group">
       <%= f.label :body, class: "mr-5" %>
-      <% if @blog.errors.include?(:body) %>
-        <P class="errors"><%= @blog.errors.full_messages_for(:body).first %></P>
-      <% end %>
       <%= f.text_area :body, size: "30x10", class: "ml-5" %>
     </div>
     <div class"from-group">
