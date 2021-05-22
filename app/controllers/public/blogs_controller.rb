@@ -25,7 +25,7 @@ class Public::BlogsController < ApplicationController
   end
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.all.order(created_at: :desc)
     # サイドバーに関する定義
     @end_user = current_end_user
     @tags = Tag.all
