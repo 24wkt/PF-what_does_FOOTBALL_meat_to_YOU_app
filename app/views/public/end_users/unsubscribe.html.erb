@@ -6,7 +6,7 @@
         退会すると、会員登録情報やこれまでの投稿が閲覧できなくなります。<br />
         退会する場合は「withdraw」をクリックしてください。
       </h3>
-      <%= link_to "Cancel", end_user_path(current_end_user), class: "btn btn-lg btn-primary mt-5" %>
+      <%= link_to "Cancel", end_user_path(current_end_user), class: "btn btn-lg btn-primary mt-5", data: {"turbolinks"=>false} %>
       <%= link_to "withdraw", withdraw_end_users_path, method: :patch, data: { confirm: 'OKを押すと退会処理が実行されます。本当によろしいですか？'}, class: "btn btn-lg btn-danger mt-5" %>
     </div>
     <div class="col-sm-3 offset-sm-1">
