@@ -18,6 +18,8 @@ module What
 
   # エラーメッセージの日本語化
   config.i18n.default_locale = :ja
+  # エラーメッセージのレイアウト
+  config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
   end
 end
 

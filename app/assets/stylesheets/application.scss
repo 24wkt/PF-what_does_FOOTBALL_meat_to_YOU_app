@@ -19,6 +19,11 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+*{
+  margin:0;
+  padding: 0;
+}
+
 .jumbotron {
   background-image: image-url("football-690684_1920.jpg");
   height: 100vh;
@@ -34,7 +39,12 @@
 footer {
   height: 100px;
   width: 100%;
-  margin-top: 200px;
+  margin-top: 70px
+}
+
+.footer-text {
+  padding-bottom: 10px;
+  color: #fff;
 }
 
 .app-title {

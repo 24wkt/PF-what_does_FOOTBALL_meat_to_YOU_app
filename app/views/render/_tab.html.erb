@@ -10,7 +10,7 @@
       <tbody>
         <% end_user.blogs.each do |blog| %>
           <tr>
-            <td class="text-center"><%= attachment_image_tag(blog, :blog_image, size: "100x50", fallback: "no-image-mini.jpg") %></td>
+            <td class="text-center"><%= attachment_image_tag(blog, :blog_image, size: "100x50", fallback: "linkedin_banner_image_1.png", size: "100x50") %></td>
             <td>
               <%= link_to blog_path(blog) do %>
                 <%= blog.title %>
@@ -34,7 +34,7 @@
         <tbody>
           <% end_user.likes.each do |like| %>
             <tr>
-              <td class="text-center"><%= attachment_image_tag(like.blog, :blog_image, size: "100x50", fallback: "no-image-mini.jpg") %></td>
+              <td class="text-center"><%= attachment_image_tag(like.blog, :blog_image, size: "100x50", fallback: "linkedin_banner_image_1.png", size: "100x50") %></td>
               <td>
                 <%= link_to blog_path(like.blog) do %>
                   <%= like.blog.title %>
@@ -58,7 +58,7 @@
         <tbody>
           <% end_user.bookmarks.each do |bookmark| %>
             <tr>
-              <td class="text-center"><%= attachment_image_tag(bookmark.blog, :blog_image, size: "100x50", fallback: "no-image-mini.jpg") %></td>
+              <td class="text-center"><%= attachment_image_tag(bookmark.blog, :blog_image, size: "100x50", fallback: "linkedin_banner_image_1.png", size: "100x50") %></td>
               <td>
                 <%= link_to blog_path(bookmark.blog) do %>
                   <%= bookmark.blog.title %>
