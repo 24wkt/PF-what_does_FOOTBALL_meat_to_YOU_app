@@ -32,7 +32,8 @@ class Blog < ApplicationRecord
 
     # 投稿に紐付いたタグを保存するためのメソッド
   def save_tag(sent_tags)
-    current_tags = self.tags.pluck(:tag_name) unless self.tags.nil?
+    current_tags = []
+    current_tags = self.tags.pluck(:tag_name) unless self.tags.size==0
     old_tags = current_tags - sent_tags
     new_tags = sent_tags - current_tags
 
