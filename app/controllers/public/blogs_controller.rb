@@ -16,7 +16,7 @@ class Public::BlogsController < ApplicationController
     if @blog.save
       @blog.save_tag(tag_list)
       flash[:notice] = "新規投稿に成功しました！"
-      redirect_to blog_path(@blog)
+      redirect_to blog_path(@blog.id)
     else
       @end_user = current_end_user
       @tags = Tag.all
