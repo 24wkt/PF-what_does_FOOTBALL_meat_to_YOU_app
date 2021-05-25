@@ -8,11 +8,15 @@
     <div class="row">
       <div class="col-sm-12 text-center mb-3">
         <h1 class="pege-heading">Admin Login</h2>
+        <div class="alert text-center">
+          <% flash.each do |key, value| %>
+            <%= content_tag(:div, value, class: "#{key}") %>
+          <% end %>
+        </div>
       </div>
     </div>
 
     <%= form_with model: @admin, url: admin_session_path, local: true do |f| %>
-      <%= render "public/shared/error_messages", resource: resource %>
 
     <div class="row field">
       <div class="col-sm-6 field text-center">
