@@ -1,6 +1,6 @@
-# What does FOOTBALL meat to YOU?
+# What is FOOTBALL meat to YOU?
 ## ポートフォリオテーマ
-***What does FOOTBALL meat to YOU?(あなたにとってのフットボールとは何か？)***
+***What is FOOTBALL meat to YOU?(あなたにとってのフットボールとは何か？)***
 ## 制作背景
 サッカーをこよなく愛する人たちの想いや解釈、意見などはSNSのプラットホーム上で無秩序に飛び交っており、情報が引き出しにくく、かつ戦術や采配などより高度な議論を行うには少々物足りない環境であると感じていました。 
   
