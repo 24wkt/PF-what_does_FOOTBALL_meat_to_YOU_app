@@ -27,7 +27,7 @@
         </div>
       <% end %>
       <div class="back text-center">
-        <%= link_to "Back", end_user_path(current_end_user) %>
+        <%= link_to "Back", end_user_path(current_end_user),data: {"turbolinks"=>false} %>
       </div>
     </div>
     <div class="col-sm-3">
